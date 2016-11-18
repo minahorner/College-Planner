@@ -9,7 +9,9 @@
 import UIKit
 
 class College{
-
+    init() {
+        
+    }
     var collegeName: String = ""
     var studentbodyGender : String = ""
     var collegeLocation : String = ""
