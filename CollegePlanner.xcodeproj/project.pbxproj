@@ -12,6 +12,7 @@
 		D73950EB1DDF55FA00684117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950E91DDF55FA00684117 /* Main.storyboard */; };
 		D73950ED1DDF55FA00684117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73950EC1DDF55FA00684117 /* Assets.xcassets */; };
 		D73950F01DDF55FA00684117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950EE1DDF55FA00684117 /* LaunchScreen.storyboard */; };
+		D76915661DDF57FD001B121D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76915651DDF57FD001B121D /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D73950EC1DDF55FA00684117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D73950EF1DDF55FA00684117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73950F11DDF55FA00684117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D76915651DDF57FD001B121D /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				D73950E51DDF55FA00684117 /* AppDelegate.swift */,
 				D73950E71DDF55FA00684117 /* ViewController.swift */,
+				D76915651DDF57FD001B121D /* College.swift */,
 				D73950E91DDF55FA00684117 /* Main.storyboard */,
 				D73950EC1DDF55FA00684117 /* Assets.xcassets */,
 				D73950EE1DDF55FA00684117 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				D73950E81DDF55FA00684117 /* ViewController.swift in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
+				D76915661DDF57FD001B121D /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 				D73950F61DDF55FA00684117 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
