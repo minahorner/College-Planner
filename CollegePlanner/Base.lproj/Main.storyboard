@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="collegeCell" textLabel="EYp-9W-bZP" rowHeight="144" style="IBUITableViewCellStyleDefault" id="hbK-Px-1ee">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="collegeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="collegeCell" textLabel="EYp-9W-bZP" rowHeight="144" style="IBUITableViewCellStyleDefault" id="hbK-Px-1ee">
                                         <rect key="frame" x="0.0" y="28" width="769" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbK-Px-1ee" id="wPk-NV-SH3">
