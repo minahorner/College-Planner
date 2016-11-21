@@ -21,7 +21,7 @@ class College{
     var studentbodyGender : String = ""
     var collegeLocation : String = ""
     var testing: String = ""
-    var action : String = ""
+    var decisionDate : String = ""
     var essaysRequired: String = ""
     var testPolicy: String = ""
     
