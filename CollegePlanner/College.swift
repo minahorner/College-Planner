@@ -13,7 +13,7 @@ class College{
         
     }
     
-    init (name: String, mainGender: String, location: String, typeOfTest: String, decisionTime: String, essays: String, testPolicychoice: String){
+    init (name: String, mainGender: String, location: String, typeOfTest: String, decisionTime: String, essays: String, testPolicychoice: String, login: String, password: String, difficulty : String, accpeted: Bool) {
         
     }
     
@@ -24,5 +24,8 @@ class College{
     var decisionDate : String = ""
     var essaysRequired: String = ""
     var testPolicy: String = ""
-    
+    var login : String = ""
+    var password : String = ""
+    var difficulty : String = ""
+    var accepted : Bool = false
 }
