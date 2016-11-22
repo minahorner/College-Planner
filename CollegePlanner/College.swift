@@ -9,12 +9,23 @@
 import UIKit
 
 class College{
+    
     init() {
         
     }
     
-    init (name: String, mainGender: String, location: String, typeOfTest: String, decisionTime: String, essays: String, testPolicychoice: String, login: String, password: String, difficulty : String, accpeted: Bool) {
-        
+    init (collegeName: String, studentbodyGender: String, collegeLocation: String, testing: String, decisionDate: String, essaysRequired: String, testPolicy: String, login: String, password: String, difficulty : String, accepted: Bool) {
+        self.collegeName = collegeName
+        self.studentbodyGender = studentbodyGender
+        self.collegeLocation = collegeLocation
+        self.testing = testing
+        self.decisionDate = decisionDate
+        self.essaysRequired = essaysRequired
+        self.testPolicy = testPolicy
+        self.login = login
+        self.password = password
+        self.difficulty = difficulty
+        self.accepted = accepted
     }
     
     var collegeName: String = ""
