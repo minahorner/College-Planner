@@ -16,6 +16,11 @@ class arrayTransfer {
     var applyingColleges : [College] = []
     var consideringColleges : [College] = []
     
+    
+    init(){
+        
+    }
+    
     init(allColleges : [College], appliedColleges: [College], acceptedColleges : [College], applyingColleges : [College],consideringColleges : [College]) {
         self.allColleges = allColleges
         self.appliedColleges = appliedColleges

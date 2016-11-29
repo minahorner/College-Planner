@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var collegeArray: [College] = [College()]
+    
+    
+    var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
+    
 
     @IBOutlet weak var collegeTableView: UITableView!
     
@@ -18,8 +21,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            collegeArray[0].collegeName = "Practice College"
-        print(collegeArray[0].collegeName)
+        collegeTableView.reloadData()
+        collegeArrays.allColleges.append(College())
+        collegeArrays.allColleges[0].collegeName = "tufts"
+        collegeArrays.applyingColleges.append(collegeArrays.allColleges[0])
         
         collegeTableView.delegate = self
         collegeTableView.dataSource = self
@@ -31,19 +36,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("almost")
+        if(segue.identifier == "segueToAddCollege"){
+            print("yep")
+            let vc = segue.destination as! AddCollegeViewController
+            vc.collegeArrays = self.collegeArrays
+            vc.previousTableView = self.collegeTableView
+        }
+    }
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         self.collegeTableView.setEditing(editing, animated: animated)
     }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return collegeArray.count
+        return collegeArrays.allColleges.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = collegeTableView.dequeueReusableCell(withIdentifier: "collegeCell", for: indexPath)
-        cell.textLabel?.text = collegeArray[indexPath.row].collegeName
+        cell.textLabel?.text = collegeArrays.allColleges[indexPath.row].collegeName
         return cell
     }
     
@@ -52,15 +67,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedCollege = collegeArray[sourceIndexPath.row]
-        collegeArray.remove(at: sourceIndexPath.row)
-        collegeArray.insert(movedCollege, at: destinationIndexPath.row)
+        let movedCollege = collegeArrays.allColleges[sourceIndexPath.row]
+        collegeArrays.allColleges.remove(at: sourceIndexPath.row)
+        collegeArrays.allColleges.insert(movedCollege, at: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             print("doing")
-            collegeArray.remove(at: indexPath.row)
+            collegeArrays.allColleges.remove(at: indexPath.row)
             collegeTableView.reloadData()
         }
     }
