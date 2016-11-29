@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */; };
 		D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73950E51DDF55FA00684117 /* AppDelegate.swift */; };
 		D73950E81DDF55FA00684117 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73950E71DDF55FA00684117 /* ViewController.swift */; };
 		D73950EB1DDF55FA00684117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950E91DDF55FA00684117 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollegeViewController.swift; sourceTree = "<group>"; };
 		D73950E21DDF55FA00684117 /* CollegePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73950E51DDF55FA00684117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73950E71DDF55FA00684117 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				D73950E71DDF55FA00684117 /* ViewController.swift */,
 				D76915651DDF57FD001B121D /* College.swift */,
 				D73950E91DDF55FA00684117 /* Main.storyboard */,
+				D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */,
 				D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */,
 				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
 				D73950EC1DDF55FA00684117 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 				D73950E81DDF55FA00684117 /* ViewController.swift in Sources */,
 				D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
+				D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */,
 				D76915661DDF57FD001B121D /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

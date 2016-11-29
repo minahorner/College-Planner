@@ -39,4 +39,5 @@ class College{
     var password : String = ""
     var difficulty : String = ""
     var accepted : Bool = false
+
 }
