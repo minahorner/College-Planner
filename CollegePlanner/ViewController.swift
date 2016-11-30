@@ -13,21 +13,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
-    
-
     @IBOutlet weak var collegeTableView: UITableView!
-    
     @IBOutlet weak var editButton: UINavigationItem!
+    var chosen = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collegeTableView.reloadData()
         collegeArrays.allColleges.append(College())
-        collegeArrays.allColleges[0].collegeName = "tufts"
+        collegeArrays.allColleges[0].collegeName = "Tufts"
+        collegeArrays.allColleges[0].collegeLocation = "Medford, Massachusetts"
         collegeArrays.applyingColleges.append(collegeArrays.allColleges[0])
-        
-        collegeTableView.delegate = self
-        collegeTableView.dataSource = self
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -36,14 +31,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-   
+   //sends to viewcontrollers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("almost")
         if(segue.identifier == "segueToAddCollege"){
             print("yep")
             let vc = segue.destination as! AddCollegeViewController
-            vc.collegeArrays = self.collegeArrays
+            vc.collegeArrays = collegeArrays
             vc.previousTableView = self.collegeTableView
+        }
+        if(segue.identifier == "segueToDetailed"){
+            let vc = segue.destination as! collegeDetailedViewController
+            vc.collegeArrays = self.collegeArrays
+            vc.chosen = (collegeTableView.indexPathForSelectedRow?.row)!
+            vc.previousVC = self
         }
     }
     
@@ -79,7 +79,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             collegeTableView.reloadData()
         }
     }
-
-
-}
+    
+   }
 

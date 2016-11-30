@@ -16,6 +16,7 @@
 		D76915661DDF57FD001B121D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76915651DDF57FD001B121D /* College.swift */; };
 		D78B958A1DE34FF6009EB527 /* collegeDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */; };
 		D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */; };
+		D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D76915651DDF57FD001B121D /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collegeDetailedViewController.swift; sourceTree = "<group>"; };
 		D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrayTransfer.swift; sourceTree = "<group>"; };
+		D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCollegeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +66,12 @@
 			children = (
 				D73950E51DDF55FA00684117 /* AppDelegate.swift */,
 				D73950E71DDF55FA00684117 /* ViewController.swift */,
-				D76915651DDF57FD001B121D /* College.swift */,
 				D73950E91DDF55FA00684117 /* Main.storyboard */,
+				D76915651DDF57FD001B121D /* College.swift */,
+				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
+				D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */,
 				D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */,
 				D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */,
-				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
 				D73950EC1DDF55FA00684117 /* Assets.xcassets */,
 				D73950EE1DDF55FA00684117 /* LaunchScreen.storyboard */,
 				D73950F11DDF55FA00684117 /* Info.plist */,
@@ -152,6 +155,7 @@
 				D73950E81DDF55FA00684117 /* ViewController.swift in Sources */,
 				D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
+				D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */,
 				D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */,
 				D76915661DDF57FD001B121D /* College.swift in Sources */,
 			);
