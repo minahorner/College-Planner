@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
@@ -24,6 +25,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         collegeArrays.allColleges[0].collegeLocation = "Medford, Massachusetts"
         collegeArrays.applyingColleges.append(collegeArrays.allColleges[0])
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

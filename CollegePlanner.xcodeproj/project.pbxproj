@@ -16,6 +16,8 @@
 		D76915661DDF57FD001B121D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76915651DDF57FD001B121D /* College.swift */; };
 		D78B958A1DE34FF6009EB527 /* collegeDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */; };
 		D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */; };
+		D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */; };
+		D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */; };
 		D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,10 @@
 		D76915651DDF57FD001B121D /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collegeDetailedViewController.swift; sourceTree = "<group>"; };
 		D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrayTransfer.swift; sourceTree = "<group>"; };
+		D7E81A491DF1CED1009A5524 /* CollegePlanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegePlanner-Bridging-Header.h"; sourceTree = "<group>"; };
+		D7E81A4A1DF1CED2009A5524 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuViewController.swift; sourceTree = "<group>"; };
 		D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCollegeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +54,7 @@
 		D73950D91DDF55FA00684117 = {
 			isa = PBXGroup;
 			children = (
+				D7E81A481DF1CE89009A5524 /* SWReveal */,
 				D73950E41DDF55FA00684117 /* CollegePlanner */,
 				D73950E31DDF55FA00684117 /* Products */,
 			);
@@ -67,6 +74,7 @@
 				D73950E51DDF55FA00684117 /* AppDelegate.swift */,
 				D73950E71DDF55FA00684117 /* ViewController.swift */,
 				D73950E91DDF55FA00684117 /* Main.storyboard */,
+				D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */,
 				D76915651DDF57FD001B121D /* College.swift */,
 				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
 				D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */,
@@ -77,6 +85,16 @@
 				D73950F11DDF55FA00684117 /* Info.plist */,
 			);
 			path = CollegePlanner;
+			sourceTree = "<group>";
+		};
+		D7E81A481DF1CE89009A5524 /* SWReveal */ = {
+			isa = PBXGroup;
+			children = (
+				D7E81A4A1DF1CED2009A5524 /* SWRevealViewController.h */,
+				D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */,
+				D7E81A491DF1CED1009A5524 /* CollegePlanner-Bridging-Header.h */,
+			);
+			name = SWReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +129,7 @@
 				TargetAttributes = {
 					D73950E11DDF55FA00684117 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -154,6 +173,8 @@
 				D78B958A1DE34FF6009EB527 /* collegeDetailedViewController.swift in Sources */,
 				D73950E81DDF55FA00684117 /* ViewController.swift in Sources */,
 				D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */,
+				D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */,
+				D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
 				D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */,
 				D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */,
@@ -280,10 +301,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CollegePlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.617413.CollegePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CollegePlanner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -292,10 +316,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CollegePlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jhhs.617413.CollegePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CollegePlanner-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
