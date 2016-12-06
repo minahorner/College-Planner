@@ -10,7 +10,7 @@ import UIKit
 
 class SideBarMenuViewController: UITableViewController {
 
-    var categories = ["All Categories"]
+    var categories = ["All Colleges"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +41,8 @@ class SideBarMenuViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: categories[indexPath.row], for: indexPath)
 
-        cell.textLabel?.text = categories[indexPath.row]
 
         return cell
     }

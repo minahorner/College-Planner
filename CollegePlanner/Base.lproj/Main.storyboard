@@ -205,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" textLabel="suk-9y-nb4" rowHeight="108" style="IBUITableViewCellStyleDefault" id="gmh-Ys-BfK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="All Colleges" textLabel="suk-9y-nb4" rowHeight="108" style="IBUITableViewCellStyleDefault" id="gmh-Ys-BfK">
                                 <rect key="frame" x="0.0" y="28" width="768" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmh-Ys-BfK" id="DDR-zJ-5Lf">
@@ -221,6 +221,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KDX-oi-125" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="xku-LZ-TL8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -322,4 +325,7 @@
             <point key="canvasLocation" x="1402.34375" y="813.8671875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xku-LZ-TL8"/>
+    </inferredMetricsTieBreakers>
 </document>
