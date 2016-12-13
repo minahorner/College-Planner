@@ -13,9 +13,12 @@ class AddCollegeViewController: UIViewController {
     var collegeArrays: arrayTransfer = arrayTransfer()
     var addCollege: College = College()
     var previousTableView = UITableView()
-    
-
     @IBOutlet weak var inputtedName: UITextField!
+    @IBOutlet weak var inputtedLocation: UITextField!
+    @IBOutlet weak var login: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var difficulty: UITextField!
+    @IBOutlet weak var deadline: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,11 @@ class AddCollegeViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         addCollege.collegeName = inputtedName.text!
+        addCollege.collegeLocation = inputtedLocation.text!
+        addCollege.login = login.text!
+        addCollege.password = password.text!
+        addCollege.difficulty = difficulty.text!
+        addCollege.decisionDate = deadline.text!
         collegeArrays.allColleges.append(addCollege)
         previousTableView.reloadData()
         self.dismiss(animated: true, completion: nil)
