@@ -1,30 +1,29 @@
 //
-//  SideBarMenuViewController.swift
+//  ApplyingToTableViewController.swift
 //  CollegePlanner
 //
-//  Created by student3 on 12/2/16.
+//  Created by student3 on 12/8/16.
 //  Copyright © 2016 John Hersey High School. All rights reserved.
 //
 
 import UIKit
 
-class SideBarMenuViewController: UITableViewController {
-
-    var categories = ["All Colleges", "Applying To Colleges"]
+class ApplyingToTableViewController: UITableViewController {
     
-    
-    
+    var collegeArrays = arrayTransfer()
+    var thing = "d"
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        print(thing)
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,13 +40,14 @@ class SideBarMenuViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return categories.count
+        return collegeArrays.applyingColleges.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: categories[indexPath.row], for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "collegeCell", for: indexPath)
 
+        cell.textLabel?.text = collegeArrays.applyingColleges[indexPath.row].collegeName
 
         return cell
     }

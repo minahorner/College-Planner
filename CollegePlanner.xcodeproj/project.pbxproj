@@ -15,6 +15,7 @@
 		D73950F01DDF55FA00684117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950EE1DDF55FA00684117 /* LaunchScreen.storyboard */; };
 		D76915661DDF57FD001B121D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76915651DDF57FD001B121D /* College.swift */; };
 		D78B958A1DE34FF6009EB527 /* collegeDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */; };
+		D7B8D3451DFA04D600EA7E9D /* ApplyingToTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B8D3441DFA04D600EA7E9D /* ApplyingToTableViewController.swift */; };
 		D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */; };
 		D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */; };
 		D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */; };
@@ -32,6 +33,7 @@
 		D73950F11DDF55FA00684117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D76915651DDF57FD001B121D /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collegeDetailedViewController.swift; sourceTree = "<group>"; };
+		D7B8D3441DFA04D600EA7E9D /* ApplyingToTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyingToTableViewController.swift; sourceTree = "<group>"; };
 		D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arrayTransfer.swift; sourceTree = "<group>"; };
 		D7E81A491DF1CED1009A5524 /* CollegePlanner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegePlanner-Bridging-Header.h"; sourceTree = "<group>"; };
 		D7E81A4A1DF1CED2009A5524 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				D73950E51DDF55FA00684117 /* AppDelegate.swift */,
 				D73950E71DDF55FA00684117 /* ViewController.swift */,
 				D73950E91DDF55FA00684117 /* Main.storyboard */,
+				D7B8D3441DFA04D600EA7E9D /* ApplyingToTableViewController.swift */,
 				D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */,
 				D76915651DDF57FD001B121D /* College.swift */,
 				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
@@ -174,6 +177,7 @@
 				D73950E81DDF55FA00684117 /* ViewController.swift in Sources */,
 				D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */,
 				D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */,
+				D7B8D3451DFA04D600EA7E9D /* ApplyingToTableViewController.swift in Sources */,
 				D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
 				D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */,

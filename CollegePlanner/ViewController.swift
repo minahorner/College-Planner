@@ -8,21 +8,29 @@
 
 import UIKit
 
+var something = "asdf"
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+   
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
-    var chosen = 0
+   // var chosen = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collegeArrays.allColleges.append(College())
-        collegeArrays.allColleges[0].collegeName = "Tufts"
-        collegeArrays.allColleges[0].collegeLocation = "Medford, Massachusetts"
+        letsTry()
+        something = "yep"
+        
+        collegeArrays.allColleges.append(College(collegeName: "Tufts", studentbodyGender: "Coed", collegeLocation: "Medford, MA", testType: "ACT w/out Writing, SAT w/out Writing", decisionDate: "1/01/17", essaysRequired: "4", testPolicy: "Always Required", login: "N/A", password: "N/A", difficulty: "Reach"))
+        
+        collegeArrays.allColleges[0].testSent = true
+        
         collegeArrays.applyingColleges.append(collegeArrays.allColleges[0])
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
@@ -37,6 +45,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func letsTry(){
+        
+        //controller?.thing = "it's lit"
     }
     
    //sends to viewcontrollers
