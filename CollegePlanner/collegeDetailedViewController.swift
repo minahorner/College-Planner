@@ -55,6 +55,10 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         vc.chosen = chosen
         vc.name = schoolName.text!
         vc.location = schoolLocation.text!
+        vc.localLogin = login.text!
+        vc.localPassword = password.text!
+        vc.localDifficulty = difficulty.text!
+        vc.localDeadline = deadline.text!
         vc.previousVC = self.previousVC
         vc.detailedVC = self
         }
