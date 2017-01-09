@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="viz-n5-IWP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="viz-n5-IWP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
@@ -446,25 +446,78 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGj-8g-fbM">
+                                <frame key="frameInset" minX="102" minY="268" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llm-fj-cEM">
+                                <frame key="frameInset" minX="149" minY="316" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-Vf-2m3">
+                                <frame key="frameInset" minX="157" minY="206" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asq-t5-OAQ">
+                                <frame key="frameInset" minX="139" minY="374" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bcf-Li-aGf">
+                                <frame key="frameInset" minX="139" minY="432" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-Mu-Nig">
+                                <frame key="frameInset" minX="251" minY="90" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22U-4s-IWJ">
+                                <frame key="frameInset" minX="294" minY="137" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CdG-Nu-cRy">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="jYw-Ry-F4f">
-                            <connections>
-                                <segue destination="5Q0-NG-iKT" kind="presentation" identifier="segueToEdit" id="bpa-za-gtQ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="jYw-Ry-F4f"/>
                     </navigationItem>
                     <connections>
                         <outlet property="TestPolicy" destination="AWK-Ff-zlB" id="kfs-TT-Q2F"/>
                         <outlet property="checklistTableView" destination="Bnz-lp-7in" id="jNV-kf-GkN"/>
                         <outlet property="deadline" destination="lhI-K6-BPh" id="rXV-kd-Kug"/>
+                        <outlet property="deadline_TextField" destination="bcf-Li-aGf" id="UwT-ma-Z3w"/>
                         <outlet property="difficulty" destination="YAf-v1-eZW" id="8MB-2s-Az4"/>
+                        <outlet property="difficulty_TextField" destination="asq-t5-OAQ" id="4Ps-Wm-508"/>
+                        <outlet property="editButton" destination="jYw-Ry-F4f" id="QA4-Sn-Agf"/>
+                        <outlet property="location_TextField" destination="22U-4s-IWJ" id="aiu-cd-qNy"/>
                         <outlet property="login" destination="YeW-AG-7Q5" id="Okg-lJ-Upe"/>
+                        <outlet property="login_TextField" destination="wGj-8g-fbM" id="9qu-2h-Gfu"/>
                         <outlet property="password" destination="g7f-od-0Rc" id="GcW-dI-yOY"/>
+                        <outlet property="password_TextField" destination="Llm-fj-cEM" id="0bE-Yi-ah8"/>
                         <outlet property="schoolLocation" destination="CCZ-eL-TQ4" id="P9i-Ou-Acs"/>
                         <outlet property="schoolName" destination="DpE-rg-2VE" id="ynJ-cp-Gbw"/>
+                        <outlet property="schoolName_TextField" destination="VJA-Mu-Nig" id="Tbw-H1-xFV"/>
+                        <outlet property="testPolicy_TextField" destination="KQE-Vf-2m3" id="jj6-Ef-UMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwN-ms-so2" userLabel="First Responder" sceneMemberID="firstResponder"/>
