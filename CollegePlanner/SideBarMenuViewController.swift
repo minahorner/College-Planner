@@ -10,7 +10,7 @@ import UIKit
 
 class SideBarMenuViewController: UITableViewController {
 
-    var categories = ["All Colleges", "Applying To Colleges"]
+    var categories = ["All Colleges"]
     
     
     
