@@ -8,7 +8,7 @@
 
 import UIKit
 
-class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
@@ -17,7 +17,17 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var deadline: UILabel!
+    @IBOutlet weak var schoolName_TextField: UITextField!
+    @IBOutlet weak var location_TextField: UITextField!
+    @IBOutlet weak var testPolicy_TextField: UITextField!
+    @IBOutlet weak var login_TextField: UITextField!
+    @IBOutlet weak var password_TextField: UITextField!
+    @IBOutlet weak var difficulty_TextField: UITextField!
+    @IBOutlet weak var deadline_TextField: UITextField!
+
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
+    var editButton1 = 0
     
     
     var checklist = ["Tests", "Essays", "Counselor Rec", "Teacher Rec", "Acceptance"]
@@ -31,9 +41,19 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        var frameRect = schoolName_TextField.frame
+        frameRect.size.height = 47; // <-- Specify the height you want here.
+        schoolName_TextField.frame = frameRect;
+        schoolName_TextField.isHidden = true
+        location_TextField.isHidden = true
+        testPolicy_TextField.isHidden = true
+        login_TextField.isHidden = true
+        password_TextField.isHidden = true
+        difficulty_TextField.isHidden = true
+        deadline_TextField.isHidden = true
         collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
         
-       
         schoolName.text = collegeArrays.allColleges[chosen].collegeName
         schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
         TestPolicy.text = collegeArrays.allColleges[chosen].testPolicy
@@ -41,6 +61,14 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         password.text = collegeArrays.allColleges[chosen].password
         difficulty.text = collegeArrays.allColleges[chosen].difficulty
         deadline.text = collegeArrays.allColleges[chosen].decisionDate
+        
+        schoolName_TextField.text = collegeArrays.allColleges[chosen].collegeName
+        location_TextField.text = collegeArrays.allColleges[chosen].collegeLocation
+        testPolicy_TextField.text = collegeArrays.allColleges[chosen].testPolicy
+        login_TextField.text = collegeArrays.allColleges[chosen].login
+        password_TextField.text = collegeArrays.allColleges[chosen].password
+        difficulty_TextField.text = collegeArrays.allColleges[chosen].difficulty
+        deadline_TextField.text = collegeArrays.allColleges[chosen].decisionDate
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,21 +76,21 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
        
     }
    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueToEdit"){
-        let vc = segue.destination as! EditCollegeViewController
-        vc.collegeArrays = collegeArrays
-        vc.chosen = chosen
-        vc.name = schoolName.text!
-        vc.location = schoolLocation.text!
-        vc.localLogin = login.text!
-        vc.localPassword = password.text!
-        vc.localDifficulty = difficulty.text!
-        vc.localDeadline = deadline.text!
-        vc.previousVC = self.previousVC
-        vc.detailedVC = self
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier == "segueToEdit"){
+//        let vc = segue.destination as! EditCollegeViewController
+//        vc.collegeArrays = collegeArrays
+//        vc.chosen = chosen
+//        vc.name = schoolName.text!
+//        vc.location = schoolLocation.text!
+//        vc.localLogin = login.text!
+//        vc.localPassword = password.text!
+//        vc.localDifficulty = difficulty.text!
+//        vc.localDeadline = deadline.text!
+//        vc.previousVC = self.previousVC
+//        vc.detailedVC = self
+//        }
+//    }
     
     
     
@@ -115,6 +143,61 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         //checkCheckmark(indexPath: indexPath)
         //cell.accessoryType = .checkmark
         return cell
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        print("work")
+        if(editButton1 == 0){
+            super.setEditing(editing, animated: animated)
+            print("works")
+            editButton1 = 1
+            schoolName_TextField.isHidden = false
+            location_TextField.isHidden = false
+            testPolicy_TextField.isHidden = false
+            login_TextField.isHidden = false
+            password_TextField.isHidden = false
+            difficulty_TextField.isHidden = false
+            deadline_TextField.isHidden = false
+            schoolName.isHidden = true
+            schoolLocation.isHidden = true
+            TestPolicy.isHidden = true
+            login.isHidden = true
+            password.isHidden = true
+            difficulty.isHidden = true
+            deadline.isHidden = true
+        }
+        else{
+            super.setEditing(editing, animated: animated)
+            schoolName_TextField.isHidden = true
+            location_TextField.isHidden = true
+            testPolicy_TextField.isHidden = true
+            login_TextField.isHidden = true
+            password_TextField.isHidden = true
+            difficulty_TextField.isHidden = true
+            deadline_TextField.isHidden = true
+            schoolName.isHidden = false
+            schoolLocation.isHidden = false
+            TestPolicy.isHidden = false
+            login.isHidden = false
+            password.isHidden = false
+            difficulty.isHidden = false
+            deadline.isHidden = false
+            collegeArrays.allColleges[chosen].collegeName = schoolName_TextField.text!
+            collegeArrays.allColleges[chosen].collegeLocation = location_TextField.text!
+            collegeArrays.allColleges[chosen].login = login_TextField.text!
+            collegeArrays.allColleges[chosen].password = password_TextField.text!
+            collegeArrays.allColleges[chosen].difficulty = difficulty_TextField.text!
+            collegeArrays.allColleges[chosen].decisionDate = deadline_TextField.text!
+            schoolName.text = collegeArrays.allColleges[chosen].collegeName
+            schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
+            TestPolicy.text = collegeArrays.allColleges[chosen].testPolicy
+            login.text = collegeArrays.allColleges[chosen].login
+            password.text = collegeArrays.allColleges[chosen].password
+            difficulty.text = collegeArrays.allColleges[chosen].difficulty
+            deadline.text = collegeArrays.allColleges[chosen].decisionDate
+            previousVC.collegeTableView.reloadData()
+            editButton1 = 0
+        }
     }
 
 }
