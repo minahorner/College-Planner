@@ -22,6 +22,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var editButton: UINavigationItem!
    // var chosen = 0
     
+    //939393
+    //00B1B7
+    //E5E5E
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         letsTry()

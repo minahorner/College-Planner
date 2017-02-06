@@ -8,7 +8,7 @@
 
 import UIKit
 
-class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, sendBackDateDelegate {
 
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
@@ -23,7 +23,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var login_TextField: UITextField!
     @IBOutlet weak var password_TextField: UITextField!
     @IBOutlet weak var difficulty_TextField: UITextField!
-    @IBOutlet weak var deadline_TextField: UITextField!
+    @IBOutlet weak var changeDeadline: UIButton!
+    
 
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -40,18 +41,23 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     var chosen = 0
     
     override func viewDidLoad() {
+        
+        print(deadline.text)
+        
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         var frameRect = schoolName_TextField.frame
         frameRect.size.height = 47; // <-- Specify the height you want here.
-        schoolName_TextField.frame = frameRect;
+        
+                schoolName_TextField.frame = frameRect;
         schoolName_TextField.isHidden = true
         location_TextField.isHidden = true
         testPolicy_TextField.isHidden = true
         login_TextField.isHidden = true
         password_TextField.isHidden = true
         difficulty_TextField.isHidden = true
-        deadline_TextField.isHidden = true
+        changeDeadline.isHidden = true
+        changeDeadline.isEnabled = false
         collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
         
         schoolName.text = collegeArrays.allColleges[chosen].collegeName
@@ -68,7 +74,11 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         login_TextField.text = collegeArrays.allColleges[chosen].login
         password_TextField.text = collegeArrays.allColleges[chosen].password
         difficulty_TextField.text = collegeArrays.allColleges[chosen].difficulty
-        deadline_TextField.text = collegeArrays.allColleges[chosen].decisionDate
+        
+        
+        changeDeadline.setTitle(deadline.text, for: .normal)
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -157,7 +167,9 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             login_TextField.isHidden = false
             password_TextField.isHidden = false
             difficulty_TextField.isHidden = false
-            deadline_TextField.isHidden = false
+            changeDeadline.isHidden = false
+            changeDeadline.setTitle(deadline.text, for: .normal)
+            changeDeadline.isEnabled = true
             schoolName.isHidden = true
             schoolLocation.isHidden = true
             TestPolicy.isHidden = true
@@ -174,7 +186,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             login_TextField.isHidden = true
             password_TextField.isHidden = true
             difficulty_TextField.isHidden = true
-            deadline_TextField.isHidden = true
+            changeDeadline.isHidden = true
+            changeDeadline.isEnabled = false
             schoolName.isHidden = false
             schoolLocation.isHidden = false
             TestPolicy.isHidden = false
@@ -187,7 +200,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             collegeArrays.allColleges[chosen].login = login_TextField.text!
             collegeArrays.allColleges[chosen].password = password_TextField.text!
             collegeArrays.allColleges[chosen].difficulty = difficulty_TextField.text!
-            collegeArrays.allColleges[chosen].decisionDate = deadline_TextField.text!
+            
             schoolName.text = collegeArrays.allColleges[chosen].collegeName
             schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
             TestPolicy.text = collegeArrays.allColleges[chosen].testPolicy
@@ -197,7 +210,23 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             deadline.text = collegeArrays.allColleges[chosen].decisionDate
             previousVC.collegeTableView.reloadData()
             editButton1 = 0
+            
+            
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as? DatePickerViewController
+        vc?.stringDate = deadline.text!
+        vc?.previousVC = self
+    }
+    
+    func sendDate(date Date: String){
+        self.deadline.text = Date
+        self.changeDeadline.setTitle(Date, for: .normal)
+        print(deadline.text)
+        self.viewDidLoad()
+    }
+    
 
 }
