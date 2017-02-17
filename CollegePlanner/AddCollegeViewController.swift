@@ -18,19 +18,23 @@ class AddCollegeViewController: UIViewController {
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var difficulty: UITextField!
-    @IBOutlet weak var deadline: UITextField!
+    
+    @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func addButtonPressed(_ sender: UIButton) {
+    @IBAction func addButtonPressed(_
+        sender: UIButton) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
+        addCollege.decisionDate = dateFormatter.string(from: deadlineDatePicker.date)
         addCollege.collegeName = inputtedName.text!
         addCollege.collegeLocation = inputtedLocation.text!
         addCollege.login = login.text!
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
-        addCollege.decisionDate = deadline.text!
         collegeArrays.allColleges.append(addCollege)
         previousTableView.reloadData()
         self.dismiss(animated: true, completion: nil)

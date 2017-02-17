@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func scheduleNotification(at date: Date) {
+    func scheduleNotification(at date: Date, school: String) {
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents(in: .current, from: date)
         let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
@@ -37,7 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let content = UNMutableNotificationContent()
         content.title = "College Reminder"
-        content.body = "One of your college deadlines is coming up"
+        
+        print(date.description)
+        let calendar_ = Calendar.current
+        let deadline_Date = calendar_.date(byAdding: .day, value: 14, to: date)
+        content.body = "The deadline for your \(school) application is coming up on \(deadline_Date!)"
         content.sound = UNNotificationSound.default()
         
         let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
@@ -48,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Uh oh! We had an error: \(error)")
             }
         }
+        print("notify")
     }
 
 

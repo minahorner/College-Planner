@@ -8,11 +8,13 @@
 
 import UIKit
 
+
 class DatePickerViewController: UIViewController {
     
     var date = Date()
     var stringDate = "nope"
     var previousVC: collegeDetailedViewController?
+    var dateFormatter = DateFormatter()
     
     var thing: sendBackDateDelegate?
 
@@ -20,10 +22,7 @@ class DatePickerViewController: UIViewController {
     @IBAction func datePickerPressed(_ sender: UIDatePicker) {
         
         date = sender.date
-        stringDate = date.description
-        
-        let delegate = UIApplication.shared.delegate as? AppDelegate
-        delegate?.scheduleNotification(at: sender.date)
+   
         
     }
     override func viewDidLoad() {
@@ -39,16 +38,25 @@ class DatePickerViewController: UIViewController {
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        stringDate = date.description
-        //thing?.sendDate(date: stringDate)
-        print(stringDate)
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
+        stringDate = dateFormatter.string(from: date)
+        //stringDate = date.description
+        
         previousVC?.changeDeadline.setTitle(stringDate, for: .normal)
         previousVC?.deadline.text = stringDate
        previousVC?.collegeArrays.allColleges[(previousVC?.chosen)!].decisionDate = stringDate
-        print(stringDate)
+       
+        let calendar = Calendar.current
+        date = calendar.date(byAdding: .day, value: -14, to: date)!
+        
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        
+        delegate?.scheduleNotification(at: date, school: (previousVC?.collegeArrays.applyingColleges[(previousVC?.chosen)!].collegeName)!)
         self.dismiss(animated: true) { 
             
         }
+        
+        print(date.description)
     }
     
     
