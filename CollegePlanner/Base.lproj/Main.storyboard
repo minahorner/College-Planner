@@ -182,7 +182,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QQg-B2-hmg">
-                                <frame key="frameInset" minX="152" minY="531" height="170" maxX="156"/>
+                                <frame key="frameInset" minX="155" minY="531" height="170" maxX="156"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="509039084.92344803">
                                     <!--2017-02-17 15:44:44 +0000-->
@@ -574,23 +574,6 @@
                                     <segue destination="IsX-xM-xI4" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="cgh-at-3eW"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="nhW-AO-OSH" rowHeight="108" style="IBUITableViewCellStyleDefault" id="szJ-6n-Dyd">
-                                <rect key="frame" x="0.0" y="136" width="768" height="108"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="szJ-6n-Dyd" id="zEe-fG-shQ">
-                                    <frame key="frameInset" width="768" height="107"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nhW-AO-OSH">
-                                            <frame key="frameInset" minX="48" width="672" height="107"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="H9l-ko-yx5" id="2jC-X8-zeF"/>
@@ -613,12 +596,44 @@
                     <view key="view" contentMode="scaleToFill" id="vGz-FU-sMf">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-JR-r1M">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRY-Lr-xMH">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBa-B4-MEB">
+                                                <frame key="frameInset" minX="265" minY="258" width="121" height="53"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lRY-Lr-xMH" firstAttribute="top" secondItem="BGs-JR-r1M" secondAttribute="top" id="8tw-hd-f7w"/>
+                                    <constraint firstAttribute="bottom" secondItem="lRY-Lr-xMH" secondAttribute="bottom" id="9Nm-dx-hO5"/>
+                                    <constraint firstAttribute="trailing" secondItem="lRY-Lr-xMH" secondAttribute="trailing" id="BDf-zG-p9k"/>
+                                    <constraint firstItem="lRY-Lr-xMH" firstAttribute="centerY" secondItem="BGs-JR-r1M" secondAttribute="centerY" id="KiP-eG-LkS"/>
+                                    <constraint firstItem="lRY-Lr-xMH" firstAttribute="leading" secondItem="BGs-JR-r1M" secondAttribute="leading" id="ebE-ce-d2d"/>
+                                    <constraint firstItem="lRY-Lr-xMH" firstAttribute="centerX" secondItem="BGs-JR-r1M" secondAttribute="centerX" id="tyc-lc-Mvf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BGs-JR-r1M" firstAttribute="leading" secondItem="vGz-FU-sMf" secondAttribute="leading" id="Bbg-NP-cEj"/>
+                            <constraint firstItem="BGs-JR-r1M" firstAttribute="top" secondItem="vGz-FU-sMf" secondAttribute="top" id="IyP-Lg-oVP"/>
+                            <constraint firstAttribute="trailing" secondItem="BGs-JR-r1M" secondAttribute="trailing" id="mMY-eo-Qef"/>
+                            <constraint firstItem="82x-Yt-L16" firstAttribute="top" secondItem="BGs-JR-r1M" secondAttribute="bottom" constant="8" symbolic="YES" id="r4L-zP-JV5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bj-6D-FWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="862"/>
+            <point key="canvasLocation" x="1146.875" y="861.9140625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AL3-eb-WAA">
