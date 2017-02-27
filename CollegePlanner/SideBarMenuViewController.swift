@@ -10,15 +10,11 @@ import UIKit
 
 class SideBarMenuViewController: UITableViewController {
 
-    var categories = ["All Colleges"]
-    
-    
-    
+    var categories = ["All Colleges", "Help"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -46,7 +42,9 @@ class SideBarMenuViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: categories[indexPath.row], for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "All Colleges", for: indexPath)
+        
+        cell.textLabel?.text = categories[indexPath.row]
 
 
         return cell
