@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70E59B91E6DBE7B0088CF6B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70E59B81E6DBE7B0088CF6B /* CloudKit.framework */; };
 		D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */; };
 		D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73950E51DDF55FA00684117 /* AppDelegate.swift */; };
 		D73950E81DDF55FA00684117 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73950E71DDF55FA00684117 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70E59B81E6DBE7B0088CF6B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollegeViewController.swift; sourceTree = "<group>"; };
 		D73950E21DDF55FA00684117 /* CollegePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73950E51DDF55FA00684117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70E59B91E6DBE7B0088CF6B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		D7B408371E6DBA1E0069F898 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D70E59B81E6DBE7B0088CF6B /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,7 +163,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
