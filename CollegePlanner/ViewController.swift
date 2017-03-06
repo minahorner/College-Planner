@@ -12,19 +12,18 @@ var something = "asdf"
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
+    //navigation bar: 42 121 170
+    //tableView: 201
+    //cell: 245
+    //college text: 13 33 51
    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
-    @IBOutlet weak var editButton: UINavigationItem!
-   // var chosen = 0
-    
-    //939393
-    //00B1B7
-    //E5E5E
+    @IBOutlet weak var editButton: UIBarButtonItem!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
         }
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
 
     }
 

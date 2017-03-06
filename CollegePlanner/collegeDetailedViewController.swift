@@ -12,14 +12,16 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
 
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
-    @IBOutlet weak var TestPolicy: UILabel!
+    @IBOutlet weak var testType: UILabel!
+    
     @IBOutlet weak var login: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var deadline: UILabel!
     @IBOutlet weak var schoolName_TextField: UITextField!
     @IBOutlet weak var location_TextField: UITextField!
-    @IBOutlet weak var testPolicy_TextField: UITextField!
+    @IBOutlet weak var testType_TextField: UITextField!
+    
     @IBOutlet weak var login_TextField: UITextField!
     @IBOutlet weak var password_TextField: UITextField!
     @IBOutlet weak var difficulty_TextField: UITextField!
@@ -41,10 +43,11 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     var chosen = 0
     
     override func viewDidLoad() {
-        
-        print(deadline.text)
-        
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         var frameRect = schoolName_TextField.frame
         frameRect.size.height = 47; // <-- Specify the height you want here.
@@ -52,7 +55,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
                 schoolName_TextField.frame = frameRect;
         schoolName_TextField.isHidden = true
         location_TextField.isHidden = true
-        testPolicy_TextField.isHidden = true
+        testType_TextField.isHidden = true
         login_TextField.isHidden = true
         password_TextField.isHidden = true
         difficulty_TextField.isHidden = true
@@ -62,7 +65,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         schoolName.text = collegeArrays.allColleges[chosen].collegeName
         schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
-        TestPolicy.text = collegeArrays.allColleges[chosen].testPolicy
+        testType.text = collegeArrays.allColleges[chosen].testType
         login.text = collegeArrays.allColleges[chosen].login
         password.text = collegeArrays.allColleges[chosen].password
         difficulty.text = collegeArrays.allColleges[chosen].difficulty
@@ -70,7 +73,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         schoolName_TextField.text = collegeArrays.allColleges[chosen].collegeName
         location_TextField.text = collegeArrays.allColleges[chosen].collegeLocation
-        testPolicy_TextField.text = collegeArrays.allColleges[chosen].testPolicy
+        testType_TextField.text = collegeArrays.allColleges[chosen].testType
         login_TextField.text = collegeArrays.allColleges[chosen].login
         password_TextField.text = collegeArrays.allColleges[chosen].password
         difficulty_TextField.text = collegeArrays.allColleges[chosen].difficulty
@@ -163,7 +166,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             editButton1 = 1
             schoolName_TextField.isHidden = false
             location_TextField.isHidden = false
-            testPolicy_TextField.isHidden = false
+            testType_TextField.isHidden = false
             login_TextField.isHidden = false
             password_TextField.isHidden = false
             difficulty_TextField.isHidden = false
@@ -172,7 +175,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             changeDeadline.isEnabled = true
             schoolName.isHidden = true
             schoolLocation.isHidden = true
-            TestPolicy.isHidden = true
+            testType.isHidden = true
             login.isHidden = true
             password.isHidden = true
             difficulty.isHidden = true
@@ -182,7 +185,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             super.setEditing(editing, animated: animated)
             schoolName_TextField.isHidden = true
             location_TextField.isHidden = true
-            testPolicy_TextField.isHidden = true
+            testType_TextField.isHidden = true
             login_TextField.isHidden = true
             password_TextField.isHidden = true
             difficulty_TextField.isHidden = true
@@ -190,7 +193,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             changeDeadline.isEnabled = false
             schoolName.isHidden = false
             schoolLocation.isHidden = false
-            TestPolicy.isHidden = false
+            testType.isHidden = false
             login.isHidden = false
             password.isHidden = false
             difficulty.isHidden = false
@@ -203,7 +206,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             
             schoolName.text = collegeArrays.allColleges[chosen].collegeName
             schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
-            TestPolicy.text = collegeArrays.allColleges[chosen].testPolicy
+            testType.text = collegeArrays.allColleges[chosen].testPolicy
             login.text = collegeArrays.allColleges[chosen].login
             password.text = collegeArrays.allColleges[chosen].password
             difficulty.text = collegeArrays.allColleges[chosen].difficulty

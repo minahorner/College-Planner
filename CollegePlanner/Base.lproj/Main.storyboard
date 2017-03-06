@@ -16,30 +16,31 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-oj-ixB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-oj-ixB">
                                 <frame key="frameInset" minX="-1" width="769" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.78938301282051282" green="0.78938301282051282" blue="0.78938301282051282" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="collegeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="collegeCell" textLabel="EYp-9W-bZP" rowHeight="128" style="IBUITableViewCellStyleDefault" id="hbK-Px-1ee">
-                                        <rect key="frame" x="0.0" y="92" width="769" height="128"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="collegeCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="collegeCell" textLabel="EYp-9W-bZP" rowHeight="128" style="IBUITableViewCellStyleDefault" id="hbK-Px-1ee">
+                                        <rect key="frame" x="0.0" y="28" width="769" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hbK-Px-1ee" id="wPk-NV-SH3">
-                                            <frame key="frameInset" width="769" height="127.5"/>
+                                            <frame key="frameInset" width="769" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="College" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EYp-9W-bZP">
-                                                    <frame key="frameInset" minX="48.5" width="672" height="127.5"/>
+                                                    <frame key="frameInset" minX="48" width="673" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" red="0.051911873234478441" green="0.12972324485455791" blue="0.200801282051282" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9609375" green="0.9609375" blue="0.9609375" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="H5V-Ha-zl1" kind="show" identifier="segueToDetailed" id="jc8-Cg-dy2"/>
                                         </connections>
@@ -54,10 +55,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Colleges" id="hui-pB-Gem">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="sJg-Pk-xbO"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="sJg-Pk-xbO">
+                            <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="edit" id="RGi-pL-aPZ"/>
+                            <barButtonItem systemItem="edit" id="RGi-pL-aPZ">
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="cwX-9O-IOZ">
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
                                     <segue destination="AhS-iO-7Pt" kind="presentation" identifier="segueToAddCollege" id="gNV-NK-9pK"/>
                                 </connections>
@@ -66,13 +72,476 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collegeTableView" destination="HoK-oj-ixB" id="M4G-jG-kp1"/>
-                        <outlet property="editButton" destination="hui-pB-Gem" id="GpY-Px-SNw"/>
+                        <outlet property="editButton" destination="RGi-pL-aPZ" id="6yp-Ni-CvM"/>
                         <outlet property="menuButton" destination="sJg-Pk-xbO" id="O3Q-ev-WBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1935.15625" y="136.5234375"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="ClC-4y-vHM">
+            <objects>
+                <viewController id="KYo-jn-Gmp" customClass="HelpViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KEw-yp-wnG"/>
+                        <viewControllerLayoutGuide type="bottom" id="2m0-GR-wei"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ERe-uE-I8M">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="8800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7u-qc-YOC">
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFd-Dm-DTr">
+                                        <rect key="frame" x="0.0" y="-64" width="768" height="8800"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmy-9e-Vbj">
+                                                <frame key="frameInset" minX="56" minY="105" width="656" height="8163"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Creating a College list:
+           
+1) How do I create a college list?
+
+- Think about who you are and what makes you happy. What characteristics
+
+in a school would be important to you? Do you want big lectures or small
+
+discussion-based classes? Do you know what subject(s) you want to
+
+study? Is location important to you? Is there an extracurricular activity that
+
+is important to you? The questions you ask yourself will vary on what
+
+matters to you as a student. Get help from all available resources. Take
+
+college visits. Meet with your college admissions representatives visiting
+
+your school. Stop by the college counselor’s office to get help creating a
+
+list. Review university websites. Once you’ve narrowed your list you’ll want
+
+to make sure that the schools you’ve chosen span the three main
+
+categories:
+
+o Safety (one or two schools you know you can get into)
+
+o Target (two or three schools where your grades and test scores are
+
+typical)
+
+o Reach (one or two schools where it will be hard for you to get in).
+
+2) How do I determine which are my reach, target, safety schools?
+
+- This is where Naviance college statistics and scattergrams are helpful.
+
+Look at the GPA and SAT/ACT averages for that college’s admitted
+
+students. If your numbers are in the range of the average admitted
+
+student, this is a potential target school. If your grades, and test scores
+
+are lower than those usually accepted OR it is a school that accepts very
+
+few students, it is a reach school. If your credentials are well above the
+
+average student it is a safety school.
+
+3) How many colleges should I apply to?
+
+- The average JHHS senior applies to four colleges but some seniors apply
+
+to only 1-2 and others apply to 8-10. A smaller number might be right for
+
+you if most of your schools are safety schools, a larger number is better if
+
+you have a number of reach schools. But most should feel like good,
+
+realistic matches. They should all be colleges you’d be happy to attend.
+
+Applying to a large number of colleges is costly and time-consuming.
+
+Don’t apply to a college unless you are genuinely interested in
+
+attending.
+
+Testing:
+
+1) Do I need to take both the SAT and ACT?
+
+- All colleges accept both the SAT and ACT. You will only need to submit
+
+one or the other with your application. You will be given practice tests in
+
+school for the SAT but you can also take free practice tests for the ACT
+
+through a free test prep program available on our school website. This will
+
+give you a feel for which test might fit you as a learner.
+
+ 
+
+- Some key differences between the new SAT and the ACT:
+
+o The SAT is comprised of four parts: Reading, Writing and
+
+Language, Math, and the optional essay. Although the essay is
+
+labeled “optional”, many colleges require you to submit a score so it
+
+is wise to complete the whole test. The SAT no longer penalizes
+
+you for wrong answers. Compared to the ACT there is more time
+
+per question, more vocabulary, less grammar and no science
+
+section. There is a no calculator section on the math test.
+
+o The ACT is comprised of five parts: English, Mathematics, Reading,
+
+Science, and an optional essay. Although the ACT writing section is
+
+labeled “optional”, most colleges require you to submit a score so
+
+plan to complete the whole test. There is no penalty for wrong
+
+answers. Compare the SAT and the ACT.
+
+2)  When should students begin test taking?
+
+- Do not take the SAT/ACT until you’re ready as some colleges may require
+
+you to submit all test scores accumulated. We recommend taking tests no
+
+earlier than the winter of junior year. You will be given the state-funded
+
+SAT in April. The College Board recommends that you take the test no
+
+more than three times.
+
+- A small number of highly selective colleges require or recommend that
+
+you take SAT Subject Tests in addition to the ACT/SAT. To ensure that
+
+the material remains fresh in your mind, SAT subject tests should be taken
+
+as soon as possible after you have completed the appropriate course work
+
+(e.g., take the U.S. History SAT subject test soon after completing a U.S.
+
+History class).
+
+3)  Do I have to submit my test scores when I apply to a school?
+
+- There are over 880 four-year college and universities that are “test
+
+optional”, meaning they don’t require you to submit standardized test
+
+scores as part of their admissions process. You can find a complete list of
+
+“test optional” or “test flexible institutions&amp;quot; at FairTest.org. However, if your
+
+test scores are average or above average relative to the school’s
+
+admissions data it will help your application to submit those scores.
+
+College Deadlines:
+
+1) What are the different deadline types?
+
+- Early Decision: If you choose this option you will apply early (usually the
+
+deadline is in early November) and also receive the decision much earlier
+
+than other applicants (usually December). Early Decision deadlines
+
+require a binding agreement between the student and the college. The
+
+student agrees that if accepted, they will withdraw all other applications
+
+and attend. You should only apply early decision to the one school you are
+
+absolutely sure is your first choice school and that it is affordable for you.
+
+Use a Net Price Calculator on the college website to know what you will
+
+pay and assess if it is affordable. Once accepted, the only circumstance
+
+under which the contract is broken, is if the actual financial aid package is
+
+below what was estimated in the Net Price Calculator and unaffordable to
+
+the family. A student can only apply under the Early Decision deadline to
+
+one school and then apply using either the Early Action or the Regular
+
+application timeline to other schools.
+
+- Early Action: These applications are due earlier than regular applications,
+
+and you will receive the answer to the applications earlier (usually in
+
+January or February). With this option, there is no implicit contract
+
+between you and the college and you are under no obligation to attend if
+
+you are accepted. You have until May 1 st to decide whether to attend, so
+
+there is plenty of time to review other offers.
+
+- Restrictive Early Action: Choosing this option restricts you from applying
+
+“early action” to more than one school. One key benefit of applying
+
+Restrictive Early Action is that students may receive the admissions
+
+decision early, most often before December. There is still no obligation for
+
+you to attend if accepted. You have until May 1 st to decide whether to
+
+attend, so there is plenty of time to review of offers.
+
+- Rolling Admissions: With this type of admission you are invited to submit
+
+your application anytime within a long period of time. Usually the rolling
+
+admissions timeline is about six months long, and some schools do not
+
+have a firm end date -- the process ends when all spaces for new students
+
+are filled. Customarily, schools using this type of application option will
+
+notify you of their decision within 4-8 weeks. You have until May 1 st to
+
+decide whether to attend, so there is plenty of time to review offers.
+
+2) Should I apply Early Decision?
+
+- It depends. If you are absolutely sure which college you want to attend
+
+and you know it is affordable, then Early Decision might be the best choice
+
+for you. If you’re not sure, you should keep your options open.
+
+Application Questions:
+
+1) Is it OK to use the same essays on different applications?
+
+Definitely. There’s no need to write a brand-new essay or personal
+
+statement for each application. Instead, devote your time to producing a
+
+great version of basic application parts.
+
+2) In addition to the admissions application, what other information will
+
+the college need from me in order to complete the application
+
+process?
+
+Most colleges and universities will require an official high school transcript,
+
+SAT and/or ACT test scores and an application fee. Many colleges ask
+
+you to complete a personal statement or essay. Some institutions may
+
+also require you to send letters of recommendation from teachers or
+
+counselors. To know what is required, check the admissions page of each
+
+college website.
+
+3) What are the Coalition, Common, and Universal College
+
+Applications?
+
+These are examples of college application services that provide
+
+standardized applications which allow you to complete a single application
+
+for multiple schools. Instead of filling out eight different applications, you
+
+can simply fill out one and submit multiple colleges. The Common
+
+Application is a standardized application used by nearly 700 colleges.
+
+Each year, nearly a million students use the Common Application to
+
+submit over 4 million applications. The Coalition Application is accepted by
+
+more than 90 institutions. The platform includes “The Locker,” a private
+
+space for you to collect and organize materials throughout high school that
+
+you might want to share with colleges and universities. The Universal
+
+Application is accepted by more than 30 colleges and universities. It will
+
+be very clear on your college admissions websites which applications you
+
+can use to apply to that college.
+
+4) Who should write my teacher letter(s) of recommendation?
+
+If your college requires a teacher letter of recommendation, look for
+
+an academic teacher from the junior or senior year of high school
+
+who knows you well and can speak to your strengths, weaknesses
+
+and the qualities that differentiate him or her from the other students
+
+in the classroom. Some colleges will allow applicants with special
+
+talents they wish to be considered in the admissions process, to
+
+submit an additional letter of recommendation from, for example, a
+
+music teacher or debate coach. This type of letter should be in
+
+addition to the teacher letter of recommendation, not replace it.
+
+Keeping College Affordable
+
+1)  How do I pay for college?
+
+- If you are a US citizen or a permanent resident (green card holder)
+
+encourage your parents to fill out a Free Application for Federal Student
+
+Aid (FAFSA) even if you believe your family may not qualify for need-
+
+based aid. The FAFSA offers many families access to lower interest loans.
+
+It may also qualify you for Federal Work-Study, which provides part-time
+
+jobs for students to help you manage expenses while you are in school. It
+
+may also qualify you for governmental grants. At many colleges, the
+
+FAFSA is required for students to be considered for merit-based
+
+scholarships.
+
+2)  How do I find out about scholarship opportunities?
+
+- As tuition costs rise, applying for scholarships has become an
+
+essential step in making college affordable. Follow the simple steps
+
+below to locate and apply for scholarships:
+
+o The most lucrative scholarships are awarded by the colleges and
+
+universities themselves. Check the financial aid website of each
+
+college on your list for merit scholarships. Sometimes these are
+
+scholarships automatically awarded based on your GPA and test
+
+scores. Sometimes you must file a scholarship application.
+
+o Local scholarships arrive in the JHHS College Career Center daily.
+
+Students should search Naviance for an updated list of
+
+scholarships available:
+
+- Log into Naviance Family Connection and click on
+
+the Colleges tab
+
+- Scroll down to Scholarships and Money
+
+- Click on Scholarship List. This updated list of local
+
+scholarships can easily by sorted by due dates so that JHHS
+
+students can research and apply for scholarships due in the
+
+next few months. Scholarships with no listed website have
+
+paper applications available in the College Career Center.
+
+o Search for national scholarships with a trusted search engine:
+
+http://jhhs.d214.org/students/scholarship-search- tools/
+
+o Don’t forget that parent and student employers, professional
+
+organizations or trade unions are also good sources of
+
+scholarships. 
+
+3) What are the advantages of going to a community college?
+
+- Many students start at community college even when they plan to finish a
+
+four year degree. Community college is cost effective. Tuition per year is
+
+below $5,000 while four-year colleges tuition is tens of thousands of
+
+dollars. Community colleges also offer smaller class sizes and more
+
+personalized attention than larger schools. At a community college,
+
+students have the option of working towards career certificates or
+
+spending the first two years of a four-year degree After completing their
+
+general education requirements with a certain GPA, students transfer to a
+
+four year college to finish their degree.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FAQ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMh-8s-13h">
+                                                <frame key="frameInset" minX="264" minY="59" width="240" height="67"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8800" id="lq4-mI-bxr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wFd-Dm-DTr" secondAttribute="trailing" id="2ij-07-VH3"/>
+                                    <constraint firstItem="wFd-Dm-DTr" firstAttribute="leading" secondItem="Y7u-qc-YOC" secondAttribute="leading" id="3ZK-xN-OiE"/>
+                                    <constraint firstItem="wFd-Dm-DTr" firstAttribute="top" secondItem="Y7u-qc-YOC" secondAttribute="top" id="nF5-yx-DzT"/>
+                                    <constraint firstAttribute="bottom" secondItem="wFd-Dm-DTr" secondAttribute="bottom" id="slR-lG-4s5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y7u-qc-YOC" firstAttribute="leading" secondItem="ERe-uE-I8M" secondAttribute="leading" id="8Ez-1D-RSu"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7u-qc-YOC" secondAttribute="trailing" id="OhI-JB-69z"/>
+                            <constraint firstItem="wFd-Dm-DTr" firstAttribute="width" secondItem="ERe-uE-I8M" secondAttribute="width" id="iPd-yI-CZs"/>
+                            <constraint firstItem="2m0-GR-wei" firstAttribute="top" secondItem="Y7u-qc-YOC" secondAttribute="bottom" id="lJv-RW-WiC"/>
+                            <constraint firstItem="Y7u-qc-YOC" firstAttribute="top" secondItem="KEw-yp-wnG" secondAttribute="bottom" id="mP7-jU-Aa9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wEr-s5-Qcq">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="XGY-T9-KMo"/>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="8800"/>
+                    <connections>
+                        <outlet property="menuButton" destination="XGY-T9-KMo" id="GNR-SW-Vxi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXd-yn-7FT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1934.375" y="3194.53125"/>
         </scene>
         <!--Add College View Controller-->
         <scene sceneID="xqQ-JR-cpZ">
@@ -105,107 +574,134 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnW-ia-trh">
-                                <frame key="frameInset" minX="43" minY="67" width="106" height="21"/>
+                                <frame key="frameInset" minX="50" minY="161" width="106" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hb1-ZM-6Md">
-                                <frame key="frameInset" minX="43" minY="138" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ8-LE-iwQ">
-                                <frame key="frameInset" minX="43" minY="217" width="47" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iac-lH-okx">
-                                <frame key="frameInset" minX="43" minY="292" width="79" height="21"/>
+                                <frame key="frameInset" minX="50" minY="232" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSf-9c-JUW">
-                                <frame key="frameInset" minX="147" minY="138" width="330" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-7Z-EnD">
-                                <frame key="frameInset" minX="147" minY="217" width="330" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NtP-TP-E66">
-                                <frame key="frameInset" minX="147" minY="292" width="330" height="30"/>
+                                <frame key="frameInset" minX="154" minY="232" width="330" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17K-71-MPc">
-                                <frame key="frameInset" minX="147" minY="63" width="330" height="30"/>
+                                <frame key="frameInset" minX="154" minY="157" width="330" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ8-LE-iwQ">
+                                <frame key="frameInset" minX="50" minY="380" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iac-lH-okx">
+                                <frame key="frameInset" minX="50" minY="455" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-7Z-EnD">
+                                <frame key="frameInset" minX="153" minY="384" width="330" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NtP-TP-E66">
+                                <frame key="frameInset" minX="153" minY="459" width="330" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHk-3L-4op">
-                                <frame key="frameInset" minX="147" minY="358" width="330" height="30"/>
+                                <frame key="frameInset" minX="153" minY="525" width="330" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve7-1d-SqP">
-                                <frame key="frameInset" minX="43" minY="367" width="73" height="21"/>
+                                <frame key="frameInset" minX="50" minY="530" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Py-FY-sWb">
-                                <frame key="frameInset" minX="43" minY="440" width="72" height="21"/>
+                                <frame key="frameInset" minX="50" minY="603" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QQg-B2-hmg">
-                                <frame key="frameInset" minX="154" minY="531" height="170" maxX="156"/>
+                                <frame key="frameInset" minX="159" minY="698" height="170" maxX="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="509039084.92344803">
                                     <!--2017-02-17 15:44:44 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbt-80-nV8">
+                                <frame key="frameInset" minX="50" minY="308" width="80" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="krO-2c-Pjd">
+                                <frame key="frameInset" minX="154" minY="308" width="330" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-Uf-9ej">
+                                <frame key="frameInset" minX="-1" width="770" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1632827137" green="0.47312653599999999" blue="0.66564503210000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfd-dR-wcK">
+                                <frame key="frameInset" minX="-1" minY="20" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.1632827137" green="0.47312653599999999" blue="0.66564503210000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Add College" id="f1g-qB-kwM"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="Login" destination="Khr-7Z-EnD" id="1JK-V5-DZ3"/>
                         <outlet property="deadlineDatePicker" destination="QQg-B2-hmg" id="mNX-VB-2K3"/>
                         <outlet property="difficulty" destination="kHk-3L-4op" id="BzR-mq-g04"/>
                         <outlet property="inputtedLocation" destination="nSf-9c-JUW" id="Viu-LK-HEm"/>
                         <outlet property="inputtedName" destination="17K-71-MPc" id="is1-9x-vak"/>
                         <outlet property="login" destination="Khr-7Z-EnD" id="hTG-uE-Mnt"/>
                         <outlet property="password" destination="NtP-TP-E66" id="7hf-Je-WYc"/>
+                        <outlet property="testType" destination="krO-2c-Pjd" id="YFV-V6-7HA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vey-Zu-ySS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3034.375" y="219.7265625"/>
         </scene>
-        <!--College Detailed View Controller-->
+        <!--Edit College-->
         <scene sceneID="61b-uX-CnV">
             <objects>
                 <viewController storyboardIdentifier="detailedViewController" id="H5V-Ha-zl1" customClass="collegeDetailedViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,33 +710,162 @@
                         <viewControllerLayoutGuide type="bottom" id="kfc-Xo-Rnk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pXl-3D-g42">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-rg-2VE">
-                                <frame key="frameInset" minX="157" minY="72" width="454" height="67"/>
+                                <frame key="frameInset" minX="157" minY="4" width="454" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCZ-eL-TQ4">
-                                <frame key="frameInset" minX="204" minY="137" width="361" height="21"/>
+                                <frame key="frameInset" minX="204" minY="69" width="361" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-lp-7in">
-                                <frame key="frameInset" minY="540" width="768" height="484"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-od-0Rc">
+                                <frame key="frameInset" minX="147" minY="231" width="331" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeW-AG-7Q5">
+                                <frame key="frameInset" minX="147" minY="183" width="295" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-v1-eZW">
+                                <frame key="frameInset" minX="137" minY="292" width="472" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsC-K9-eeG">
+                                <frame key="frameInset" minX="14" minY="186" width="80" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeU-5X-UuN">
+                                <frame key="frameInset" minX="14" minY="237" width="121" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go2-Jm-Jae">
+                                <frame key="frameInset" minX="18" minY="293" width="121" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REs-8w-TSu">
+                                <frame key="frameInset" minX="18" minY="355" width="121" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-K6-BPh">
+                                <frame key="frameInset" minX="137" minY="353" width="437" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Things To Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4K-Dx-NSr">
+                                <frame key="frameInset" minX="14" minY="427" width="768" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGj-8g-fbM">
+                                <frame key="frameInset" minX="147" minY="186" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llm-fj-cEM">
+                                <frame key="frameInset" minX="147" minY="237" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asq-t5-OAQ">
+                                <frame key="frameInset" minX="137" minY="295" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-Mu-Nig">
+                                <frame key="frameInset" minX="251" minY="22" width="271" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22U-4s-IWJ">
+                                <frame key="frameInset" minX="294" minY="69" width="181" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWK-Ff-zlB" userLabel="Test Type">
+                                <frame key="frameInset" minX="151" minY="130" width="472" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy0-w6-HN3">
+                                <frame key="frameInset" minX="14" minY="130" width="141" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-Vf-2m3" userLabel="Test Type Text Field">
+                                <frame key="frameInset" minX="147" minY="130" width="246" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIG-oM-IJQ" userLabel="Change Deadline">
+                                <frame key="frameInset" minX="137" minY="352" width="385" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="it here"/>
+                                <connections>
+                                    <segue destination="Vnd-lz-66F" kind="presentation" identifier="segueToDate" id="PLh-My-Vl9"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-lp-7in">
+                                <frame key="frameInset" minX="35" minY="470" width="698" height="484"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.051911873230000002" green="0.12972324490000001" blue="0.20080128210000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Tests" rowHeight="93" id="Y6h-B3-s53">
-                                        <rect key="frame" x="0.0" y="28" width="768" height="93"/>
+                                        <rect key="frame" x="0.0" y="28" width="698" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6h-B3-s53" id="s6v-Xl-jZf">
-                                            <frame key="frameInset" width="768" height="93"/>
+                                            <frame key="frameInset" width="698" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Score Sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmj-q2-P8u">
@@ -252,12 +877,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Essays" rowHeight="93" id="YNG-Ik-O7Q">
-                                        <rect key="frame" x="0.0" y="121" width="768" height="93"/>
+                                        <rect key="frame" x="0.0" y="121" width="698" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YNG-Ik-O7Q" id="xff-un-fHk">
-                                            <frame key="frameInset" width="768" height="93"/>
+                                            <frame key="frameInset" width="698" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Essay(s) Written" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRG-aY-nN8">
@@ -269,12 +895,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Counselor Rec" rowHeight="93" id="1zn-RC-B8b">
-                                        <rect key="frame" x="0.0" y="214" width="768" height="93"/>
+                                        <rect key="frame" x="0.0" y="214" width="698" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1zn-RC-B8b" id="y6z-LO-F9W">
-                                            <frame key="frameInset" width="768" height="93"/>
+                                            <frame key="frameInset" width="698" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Counselor Recommendation Letter Sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlZ-4G-TQd">
@@ -286,12 +913,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Teacher Rec" rowHeight="93" id="swK-Ce-GYC">
-                                        <rect key="frame" x="0.0" y="307" width="768" height="93"/>
+                                        <rect key="frame" x="0.0" y="307" width="698" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="swK-Ce-GYC" id="4jn-FB-h2n">
-                                            <frame key="frameInset" width="768" height="93"/>
+                                            <frame key="frameInset" width="698" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Teacher Recommendation Letter(s) Sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-EJ-QlA">
@@ -303,12 +931,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Acceptance" rowHeight="93" id="KDj-OH-Tlh">
-                                        <rect key="frame" x="0.0" y="400" width="768" height="93"/>
+                                        <rect key="frame" x="0.0" y="400" width="698" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KDj-OH-Tlh" id="MJn-ap-MK0">
-                                            <frame key="frameInset" width="768" height="93"/>
+                                            <frame key="frameInset" width="698" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acceptance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZe-YO-M5A">
@@ -320,6 +949,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -327,142 +957,13 @@
                                     <outlet property="delegate" destination="H5V-Ha-zl1" id="fnO-eP-9Lz"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-od-0Rc">
-                                <frame key="frameInset" minX="147" minY="299" width="331" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeW-AG-7Q5">
-                                <frame key="frameInset" minX="106" minY="251" width="295" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAf-v1-eZW">
-                                <frame key="frameInset" minX="137" minY="360" width="472" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsC-K9-eeG">
-                                <frame key="frameInset" minX="18" minY="251" width="80" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeU-5X-UuN">
-                                <frame key="frameInset" minX="18" minY="300" width="121" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Go2-Jm-Jae">
-                                <frame key="frameInset" minX="18" minY="361" width="121" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REs-8w-TSu">
-                                <frame key="frameInset" minX="18" minY="423" width="121" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhI-K6-BPh">
-                                <frame key="frameInset" minX="137" minY="421" width="437" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Things To Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4K-Dx-NSr">
-                                <frame key="frameInset" minX="14" minY="495" width="768" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGj-8g-fbM">
-                                <frame key="frameInset" minX="100" minY="257" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llm-fj-cEM">
-                                <frame key="frameInset" minX="147" minY="305" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asq-t5-OAQ">
-                                <frame key="frameInset" minX="137" minY="363" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VJA-Mu-Nig">
-                                <frame key="frameInset" minX="251" minY="90" width="271" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22U-4s-IWJ">
-                                <frame key="frameInset" minX="294" minY="137" width="181" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWK-Ff-zlB">
-                                <frame key="frameInset" minX="151" minY="198" width="472" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Policy:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy0-w6-HN3">
-                                <frame key="frameInset" minX="14" minY="198" width="141" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQE-Vf-2m3">
-                                <frame key="frameInset" minX="151" minY="203" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIG-oM-IJQ" userLabel="Change Deadline">
-                                <frame key="frameInset" minX="137" minY="420" width="385" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="it here"/>
-                                <connections>
-                                    <segue destination="Vnd-lz-66F" kind="presentation" identifier="segueToDate" id="PLh-My-Vl9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CdG-Nu-cRy">
+                    <navigationItem key="navigationItem" title="Edit College" id="CdG-Nu-cRy">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="jYw-Ry-F4f"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="TestPolicy" destination="AWK-Ff-zlB" id="kfs-TT-Q2F"/>
                         <outlet property="changeDeadline" destination="WIG-oM-IJQ" id="Btl-TB-XOG"/>
                         <outlet property="checklistTableView" destination="Bnz-lp-7in" id="jNV-kf-GkN"/>
                         <outlet property="deadline" destination="lhI-K6-BPh" id="rXV-kd-Kug"/>
@@ -477,12 +978,13 @@
                         <outlet property="schoolLocation" destination="CCZ-eL-TQ4" id="P9i-Ou-Acs"/>
                         <outlet property="schoolName" destination="DpE-rg-2VE" id="ynJ-cp-Gbw"/>
                         <outlet property="schoolName_TextField" destination="VJA-Mu-Nig" id="Tbw-H1-xFV"/>
-                        <outlet property="testPolicy_TextField" destination="KQE-Vf-2m3" id="jj6-Ef-UMy"/>
+                        <outlet property="testType" destination="AWK-Ff-zlB" id="ONB-VJ-rD2"/>
+                        <outlet property="testType_TextField" destination="KQE-Vf-2m3" id="aoG-vi-rd7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwN-ms-so2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2978.125" y="959.76562499999989"/>
+            <point key="canvasLocation" x="4509.375" y="959.76562499999989"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="Oyc-h3-Ntu">
@@ -515,13 +1017,26 @@
                                     <action selector="donePressed:" destination="Vnd-lz-66F" eventType="touchUpInside" id="L9n-tZ-7YV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Te8-Yo-itN">
+                                <frame key="frameInset" minX="-2" width="770" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1632827137" green="0.47312653599999999" blue="0.66564503210000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpQ-4X-5Kd">
+                                <frame key="frameInset" minX="-2" minY="20" height="44" maxX="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.1632827137" green="0.47312653599999999" blue="0.66564503210000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Change Date" id="Ppy-Rt-eAi"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrZ-eP-cnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3663.28125" y="961.52343749999989"/>
+            <point key="canvasLocation" x="5194.53125" y="961.52343749999989"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Jcg-O7-uDn">
@@ -549,52 +1064,56 @@
         <scene sceneID="ryB-L7-09l">
             <objects>
                 <tableViewController id="H9l-ko-yx5" customClass="SideBarMenuViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" id="iHy-dX-0LZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="28" sectionFooterHeight="28" id="iHy-dX-0LZ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="All Colleges" textLabel="suk-9y-nb4" rowHeight="108" style="IBUITableViewCellStyleDefault" id="gmh-Ys-BfK">
-                                <rect key="frame" x="0.0" y="28" width="768" height="108"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmh-Ys-BfK" id="DDR-zJ-5Lf">
-                                    <frame key="frameInset" width="768" height="107.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All Colleges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="suk-9y-nb4">
-                                            <frame key="frameInset" minX="48" width="672" height="107.5"/>
+                        <sections>
+                            <tableViewSection id="2gh-Im-ek9">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="suk-9y-nb4" rowHeight="108" style="IBUITableViewCellStyleDefault" id="gmh-Ys-BfK">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmh-Ys-BfK" id="DDR-zJ-5Lf">
+                                            <frame key="frameInset" width="768" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="IsX-xM-xI4" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="iPF-bN-MyN"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fc8-XV-SKd" style="IBUITableViewCellStyleDefault" id="ZSc-9z-jRs">
-                                <rect key="frame" x="0.0" y="136" width="768" height="108"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZSc-9z-jRs" id="VFa-op-LPQ">
-                                    <frame key="frameInset" width="768" height="107.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fc8-XV-SKd">
-                                            <frame key="frameInset" minX="48" width="672" height="107.5"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All Colleges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="suk-9y-nb4">
+                                                    <frame key="frameInset" minX="48" width="672" height="107"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IsX-xM-xI4" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="iPF-bN-MyN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fc8-XV-SKd" style="IBUITableViewCellStyleDefault" id="ZSc-9z-jRs">
+                                        <rect key="frame" x="0.0" y="108" width="768" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZSc-9z-jRs" id="VFa-op-LPQ">
+                                            <frame key="frameInset" width="768" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="XSt-So-Wtb" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="GtZ-KJ-tNU"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fc8-XV-SKd">
+                                                    <frame key="frameInset" minX="48" width="672" height="107"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xSa-Yr-Rz9" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Kkv-5g-oJq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="H9l-ko-yx5" id="2jC-X8-zeF"/>
                             <outlet property="delegate" destination="H9l-ko-yx5" id="emg-95-J6a"/>
@@ -605,46 +1124,16 @@
             </objects>
             <point key="canvasLocation" x="230" y="860"/>
         </scene>
-        <!--Help View Controller-->
-        <scene sceneID="uQM-db-Ei9">
-            <objects>
-                <viewController id="XSt-So-Wtb" customClass="HelpViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="A6b-NF-BTp"/>
-                        <viewControllerLayoutGuide type="bottom" id="alJ-W4-Kj3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="d81-ol-fD6">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-3U-9gF">
-                                <frame key="frameInset" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="cYt-1c-YTi">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="V1F-GL-9hb"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="menuButton" destination="V1F-GL-9hb" id="8vJ-ab-J1a"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XsA-VZ-ToZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1028" y="887"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AL3-eb-WAA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IsX-xM-xI4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bem-tT-XtF">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="bem-tT-XtF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16328271368813083" green="0.4731265359683724" blue="0.66564503205128212" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -654,6 +1143,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8r-0t-CMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1148" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2eJ-AQ-CRg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xSa-Yr-Rz9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rig-I5-LSr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KYo-jn-Gmp" kind="relationship" relationship="rootViewController" id="woR-fJ-OSF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmS-OC-rhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148" y="917"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

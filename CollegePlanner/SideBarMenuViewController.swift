@@ -10,7 +10,7 @@ import UIKit
 
 class SideBarMenuViewController: UITableViewController {
 
-    var categories = ["All Colleges", "Help"]
+   // var categories = ["All Colleges", "Help"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class SideBarMenuViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -95,5 +95,6 @@ class SideBarMenuViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+ */
 
 }

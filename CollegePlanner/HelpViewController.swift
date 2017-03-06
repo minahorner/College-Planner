@@ -11,12 +11,10 @@ import UIKit
 class HelpViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        if self.revealViewController() != nil {
+                if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

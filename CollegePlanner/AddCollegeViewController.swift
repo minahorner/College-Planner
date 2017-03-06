@@ -15,6 +15,7 @@ class AddCollegeViewController: UIViewController {
     var previousTableView = UITableView()
     @IBOutlet weak var inputtedName: UITextField!
     @IBOutlet weak var inputtedLocation: UITextField!
+    @IBOutlet weak var testType: UITextField!
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var difficulty: UITextField!
@@ -23,6 +24,8 @@ class AddCollegeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     @IBAction func addButtonPressed(_
@@ -32,6 +35,7 @@ class AddCollegeViewController: UIViewController {
         addCollege.decisionDate = dateFormatter.string(from: deadlineDatePicker.date)
         addCollege.collegeName = inputtedName.text!
         addCollege.collegeLocation = inputtedLocation.text!
+        addCollege.testType = testType.text!
         addCollege.login = login.text!
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
