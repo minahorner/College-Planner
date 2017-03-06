@@ -11,20 +11,26 @@ import UIKit
 class College{
     
     init() {
-       // self.checklist = [false, false, false, false, false]
+        // self.checklist = [false, false, false, false, false]
     }
     
-    init (collegeName: String, studentbodyGender: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, testPolicy: String, login: String, password: String, difficulty : String) {
+    init (collegeName: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, login: String, password: String, difficulty : String, counselorRecNeeded : String, counselorRecDone : String,
+          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String, accepted : String) {
         self.collegeName = collegeName
-        self.studentbodyGender = studentbodyGender
         self.collegeLocation = collegeLocation
         self.testType = testType
         self.decisionDate = decisionDate
         self.essaysRequired = essaysRequired
-        self.testPolicy = testPolicy
         self.login = login
         self.password = password
         self.difficulty = difficulty
+        self.counselorRecNeeded = insertBool(property: counselorRecNeeded)
+        self.counselorRecDone = insertBool(property: counselorRecDone)
+        self.teacherRecNeeded = insertBool(property: teacherRecNeeded)
+        self.teacherRecDone = insertBool(property: teacherRecDone)
+        self.essaysDone = insertBool(property: essaysDone)
+        self.testSent = insertBool(property: testSent)
+        self.accepted = insertBool(property: accepted)
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
     }
@@ -49,5 +55,13 @@ class College{
     var accepted : Bool = false
     
     //var checklist: [Bool] = [testSent]
-
+    
+    func insertBool(property : String) -> Bool{
+        if(property == "1"){
+            return true
+        }
+        else{
+            return false
+        }
+    }
 }
