@@ -206,7 +206,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             
             schoolName.text = collegeArrays.allColleges[chosen].collegeName
             schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
-            testType.text = collegeArrays.allColleges[chosen].testPolicy
             login.text = collegeArrays.allColleges[chosen].login
             password.text = collegeArrays.allColleges[chosen].password
             difficulty.text = collegeArrays.allColleges[chosen].difficulty

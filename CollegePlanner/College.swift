@@ -41,7 +41,6 @@ class College{
     var testType: String = ""
     var decisionDate : String = ""
     var essaysRequired: String = ""
-    var testPolicy: String = ""
     var counselorRecNeeded: Bool = false
     var teacherRecNeeded: Bool = false
     var login : String = ""

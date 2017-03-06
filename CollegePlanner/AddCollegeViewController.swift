@@ -24,6 +24,8 @@ class AddCollegeViewController: UIViewController {
     
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     
+    @IBOutlet weak var inputtedTest: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,6 +41,15 @@ class AddCollegeViewController: UIViewController {
         addCollege.login = login.text!
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
+        addCollege.testType = inputtedTest.text!
+        addCollege.accepted = false
+        addCollege.counselorRecDone =  false
+        addCollege.counselorRecNeeded = false
+        addCollege.teacherRecDone = false
+        addCollege.teacherRecNeeded = false
+        addCollege.testSent = false
+        addCollege.essaysDone = false
+        
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
         //addCollege.counselorRecDone = false
@@ -69,7 +80,15 @@ class AddCollegeViewController: UIViewController {
         place.setObject(newCollege.password as CKRecordValue?, forKey: "password")
         place.setObject(newCollege.difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(newCollege.decisionDate as CKRecordValue?, forKey: "decisionDate")
-        
+        place.setObject(newCollege.testType as CKRecordValue?, forKey: "test")
+        place.setObject("2" as CKRecordValue?, forKey: "accepted")
+        place.setObject("2" as CKRecordValue?, forKey: "essaysRequired")
+        place.setObject("2" as CKRecordValue?, forKey: "essaysDone")
+        place.setObject("2" as CKRecordValue?, forKey: "counselorRec")
+        place.setObject("2" as CKRecordValue?, forKey: "counselorRecDone")
+        place.setObject("2" as CKRecordValue?, forKey: "teacherRec")
+        place.setObject("2" as CKRecordValue?, forKey: "teacherRecDone")
+        place.setObject("2" as CKRecordValue?, forKey: "testSent")
         database.save(place) { (record, error) in
             if(error == nil){
                 print("saved")
