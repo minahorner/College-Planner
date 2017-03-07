@@ -11,6 +11,7 @@ import CloudKit
 
 class AddCollegeViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     var previousVC = ViewController()
     var addCollege: College = College()
     var previousTableView = UITableView()
@@ -28,6 +29,9 @@ class AddCollegeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.barStyle = UIBarStyle.black
+        navigationBar.tintColor = UIColor.white
+        
     }
     
     

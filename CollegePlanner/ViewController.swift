@@ -25,9 +25,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var editButton: UINavigationItem!
     // var chosen = 0
     
-    //939393
-    //00B1B7
-    //E5E5E
+    //nav bar:42, 121, 170
+    //table view: 201
+    //cell: 245
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
     }
     
