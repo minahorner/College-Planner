@@ -80,6 +80,9 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         
         changeDeadline.setTitle(deadline.text, for: .normal)
+        
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
 
         
     }

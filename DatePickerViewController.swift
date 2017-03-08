@@ -11,6 +11,7 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     var date = Date()
     var stringDate = "nope"
     var previousVC: collegeDetailedViewController?
@@ -27,6 +28,9 @@ class DatePickerViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationBar.barStyle = UIBarStyle.black
+        navigationBar.tintColor = UIColor.white
         
         // Do any additional setup after loading the view.
     }
