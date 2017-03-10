@@ -28,6 +28,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var changeDeadline: UIButton!
     
 
+
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     var editButton1 = 0
@@ -37,7 +38,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     var collegeChecklist: [Bool] = []
    
     @IBOutlet weak var checklistTableView: UITableView!
-    var collegeArrays : arrayTransfer = arrayTransfer()
+    var collegeArray : [College] = [College]()
     
     var previousVC : ViewController!
     var chosen = 0
@@ -52,7 +53,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         var frameRect = schoolName_TextField.frame
         frameRect.size.height = 47; // <-- Specify the height you want here.
         
-                schoolName_TextField.frame = frameRect;
+        schoolName_TextField.frame = frameRect;
         schoolName_TextField.isHidden = true
         location_TextField.isHidden = true
         testType_TextField.isHidden = true
@@ -61,22 +62,24 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         difficulty_TextField.isHidden = true
         changeDeadline.isHidden = true
         changeDeadline.isEnabled = false
-        collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
+        //collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
+        collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
         
-        schoolName.text = collegeArrays.allColleges[chosen].collegeName
-        schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
-        testType.text = collegeArrays.allColleges[chosen].testType
-        login.text = collegeArrays.allColleges[chosen].login
-        password.text = collegeArrays.allColleges[chosen].password
-        difficulty.text = collegeArrays.allColleges[chosen].difficulty
-        deadline.text = collegeArrays.allColleges[chosen].decisionDate
         
-        schoolName_TextField.text = collegeArrays.allColleges[chosen].collegeName
-        location_TextField.text = collegeArrays.allColleges[chosen].collegeLocation
-        testType_TextField.text = collegeArrays.allColleges[chosen].testType
-        login_TextField.text = collegeArrays.allColleges[chosen].login
-        password_TextField.text = collegeArrays.allColleges[chosen].password
-        difficulty_TextField.text = collegeArrays.allColleges[chosen].difficulty
+        schoolName.text = collegeArray[chosen].collegeName
+        schoolLocation.text = collegeArray[chosen].collegeLocation
+        testType.text = collegeArray[chosen].testType
+        login.text = collegeArray[chosen].login
+        password.text = collegeArray[chosen].password
+        difficulty.text = collegeArray[chosen].difficulty
+        deadline.text = collegeArray[chosen].decisionDate
+        
+        schoolName_TextField.text = collegeArray[chosen].collegeName
+        login_TextField.text = collegeArray[chosen].collegeLocation
+        testType_TextField.text = collegeArray[chosen].testType
+        login_TextField.text = collegeArray[chosen].login
+        password_TextField.text = collegeArray[chosen].password
+        difficulty_TextField.text = collegeArray[chosen].difficulty
         
         
         changeDeadline.setTitle(deadline.text, for: .normal)
@@ -123,7 +126,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
                 collegeChecklist[indexPath.row] = false
             }
             refreshChecklist()
-            print(collegeArrays.allColleges[chosen].essaysDone)
+            print(collegeArray[chosen].essaysDone)
         }
     }
     
