@@ -204,18 +204,18 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = false
             difficulty.isHidden = false
             deadline.isHidden = false
-            collegeArrays.allColleges[chosen].collegeName = schoolName_TextField.text!
-            collegeArrays.allColleges[chosen].collegeLocation = location_TextField.text!
-            collegeArrays.allColleges[chosen].login = login_TextField.text!
-            collegeArrays.allColleges[chosen].password = password_TextField.text!
-            collegeArrays.allColleges[chosen].difficulty = difficulty_TextField.text!
+            collegeArray[chosen].collegeName = schoolName_TextField.text!
+            collegeArray[chosen].collegeLocation = location_TextField.text!
+            collegeArray[chosen].login = login_TextField.text!
+            collegeArray[chosen].password = password_TextField.text!
+            collegeArray[chosen].difficulty = difficulty_TextField.text!
             
-            schoolName.text = collegeArrays.allColleges[chosen].collegeName
-            schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
-            login.text = collegeArrays.allColleges[chosen].login
-            password.text = collegeArrays.allColleges[chosen].password
-            difficulty.text = collegeArrays.allColleges[chosen].difficulty
-            deadline.text = collegeArrays.allColleges[chosen].decisionDate
+            schoolName.text = collegeArray[chosen].collegeName
+            schoolLocation.text = collegeArray[chosen].collegeLocation
+            login.text = collegeArray[chosen].login
+            password.text = collegeArray[chosen].password
+            difficulty.text = collegeArray[chosen].difficulty
+            deadline.text = collegeArray[chosen].decisionDate
             previousVC.collegeTableView.reloadData()
             editButton1 = 0
             
@@ -234,6 +234,10 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         self.changeDeadline.setTitle(Date, for: .normal)
         print(deadline.text)
         self.viewDidLoad()
+    }
+    
+    func updateCloud(){
+        
     }
     
 
