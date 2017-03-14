@@ -31,6 +31,7 @@ class College{
         self.essaysDone = "0"
         self.testSent = "0"
         self.accepted = "0"
+        self.recordID = collegeName
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
     }
@@ -46,7 +47,7 @@ class College{
     var login : String = ""
     var password : String = ""
     var difficulty : String = ""
-    
+    var recordID : String = ""
     var teacherRecDone: String = ""
     var counselorRecDone: String =  ""
     var essaysDone: String = ""

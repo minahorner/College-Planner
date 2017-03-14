@@ -65,6 +65,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         changeDeadline.isEnabled = false
         
         collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
+        print("\(collegeChecklist[4])" + "This is the accepted saved integer")
+        print("\(collegeArray[chosen].accepted)" + "This is what is saved")
         
         schoolName.text = collegeArray[chosen].collegeName
         schoolLocation.text = collegeArray[chosen].collegeLocation
