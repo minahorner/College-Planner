@@ -14,6 +14,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
     @IBOutlet weak var testType: UILabel!
+   
     @IBOutlet weak var login: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var difficulty: UILabel!
@@ -186,7 +187,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password_TextField.isHidden = false
             difficulty_TextField.isHidden = false
             changeDeadline.isHidden = false
-            testType_TextField.isHidden = false
+            //testType_TextField.isHidden = false
             changeDeadline.setTitle(deadline.text, for: .normal)
             changeDeadline.isEnabled = true
             schoolName.isHidden = true
@@ -196,7 +197,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = true
             difficulty.isHidden = true
             deadline.isHidden = true
-            testType.isHidden = true
+            //testType.isHidden = true
             
         }
         else{
@@ -216,7 +217,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = false
             difficulty.isHidden = false
             deadline.isHidden = false
-            testType.isHidden = false
+            //testType.isHidden = false
             
             testType.text = testType_TextField.text
             
