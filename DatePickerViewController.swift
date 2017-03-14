@@ -48,14 +48,14 @@ class DatePickerViewController: UIViewController {
         
         previousVC?.changeDeadline.setTitle(stringDate, for: .normal)
         previousVC?.deadline.text = stringDate
-       previousVC?.collegeArrays.allColleges[(previousVC?.chosen)!].decisionDate = stringDate
+       previousVC?.collegeArray[(previousVC?.chosen)!].decisionDate = stringDate
        
         let calendar = Calendar.current
         date = calendar.date(byAdding: .day, value: -14, to: date)!
         
         let delegate = UIApplication.shared.delegate as? AppDelegate
         
-        delegate?.scheduleNotification(at: date, school: (previousVC?.collegeArrays.applyingColleges[(previousVC?.chosen)!].collegeName)!)
+        //delegate?.scheduleNotification(at: date, school: (previousVC?.applyingCollegeArray[(previousVC?.chosen)!].collegeName)!)
         self.dismiss(animated: true) { 
             
         }

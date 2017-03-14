@@ -24,13 +24,13 @@ class College{
         self.login = login
         self.password = password
         self.difficulty = difficulty
-        self.counselorRecNeeded = insertBool(property: counselorRecNeeded)
-        self.counselorRecDone = insertBool(property: counselorRecDone)
-        self.teacherRecNeeded = insertBool(property: teacherRecNeeded)
-        self.teacherRecDone = insertBool(property: teacherRecDone)
-        self.essaysDone = insertBool(property: essaysDone)
-        self.testSent = insertBool(property: testSent)
-        self.accepted = insertBool(property: accepted)
+        self.counselorRecNeeded = "2"
+        self.counselorRecDone = "2"
+        self.teacherRecNeeded = "2"
+        self.teacherRecDone = "2"
+        self.essaysDone = "2"
+        self.testSent = "2"
+        self.accepted = "2"
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
     }
@@ -41,26 +41,18 @@ class College{
     var testType: String = ""
     var decisionDate : String = ""
     var essaysRequired: String = ""
-    var counselorRecNeeded: Bool = false
-    var teacherRecNeeded: Bool = false
+    var counselorRecNeeded: String = ""
+    var teacherRecNeeded: String = ""
     var login : String = ""
     var password : String = ""
     var difficulty : String = ""
     
-    var teacherRecDone: Bool = false
-    var counselorRecDone: Bool =  false
-    var essaysDone: Bool = false
-    var testSent: Bool = false
-    var accepted : Bool = false
+    var teacherRecDone: String = ""
+    var counselorRecDone: String =  ""
+    var essaysDone: String = ""
+    var testSent: String = ""
+    var accepted : String = ""
     
     //var checklist: [Bool] = [testSent]
     
-    func insertBool(property : String) -> Bool{
-        if(property == "1"){
-            return true
-        }
-        else{
-            return false
-        }
-    }
 }

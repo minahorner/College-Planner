@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, sendBackDateDelegate {
 
@@ -35,7 +36,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     
     var checklist = ["Tests", "Essays", "Counselor Rec", "Teacher Rec", "Acceptance"]
-    var collegeChecklist: [Bool] = []
+    var collegeChecklist: [String] = []
    
     @IBOutlet weak var checklistTableView: UITableView!
     var collegeArray : [College] = [College]()
@@ -118,12 +119,12 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         if let cell = checklistTableView.cellForRow(at: indexPath) {
             if(cell.accessoryType != .checkmark){
             cell.accessoryType = .checkmark
-                collegeChecklist[indexPath.row] = true
+                collegeChecklist[indexPath.row] = "1"
                 
                 
             }else{
                 cell.accessoryType = .none
-                collegeChecklist[indexPath.row] = false
+                collegeChecklist[indexPath.row] = "2"
             }
             refreshChecklist()
             print(collegeArray[chosen].essaysDone)
@@ -140,11 +141,11 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
  */
     
     func refreshChecklist(){
-        collegeArrays.allColleges[chosen].testSent = collegeChecklist[0]
-        collegeArrays.allColleges[chosen].essaysDone = collegeChecklist[1]
-        collegeArrays.allColleges[chosen].counselorRecDone = collegeChecklist[2]
-        collegeArrays.allColleges[chosen].teacherRecDone = collegeChecklist[3]
-        collegeArrays.allColleges[chosen].accepted = collegeChecklist[4]
+        collegeArray[chosen].testSent = collegeChecklist[0]
+        collegeArray[chosen].essaysDone = collegeChecklist[1]
+        collegeArray[chosen].counselorRecDone = collegeChecklist[2]
+        collegeArray[chosen].teacherRecDone = collegeChecklist[3]
+        collegeArray[chosen].accepted = collegeChecklist[4]
     }
     
     
@@ -154,7 +155,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = checklistTableView.dequeueReusableCell(withIdentifier: checklist[indexPath.row], for: indexPath)
-        if(collegeChecklist[indexPath.row] == true){
+        if(collegeChecklist[indexPath.row] == "1"){
             cell.accessoryType = .checkmark
         }
         //print(cell.reuseIdentifier)
@@ -237,8 +238,35 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func updateCloud(){
-        
+        let ID = CKRecordID(recordName: collegeArray[chosen].collegeName)
+        let place = CKRecord(recordType: "College", recordID: ID)
+        let modifyRecords = CKModifyRecordsOperation(recordsToSave: [place], recordIDsToDelete: nil)
+        modifyRecords.savePolicy = CKRecordSavePolicy.allKeys
+        modifyRecords.qualityOfService = QualityOfService.userInitiated
+        place.setObject(collegeArray[chosen].collegeName as CKRecordValue?, forKey: "name")
+        place.setObject(collegeArray[chosen].collegeLocation as CKRecordValue?, forKey: "location")
+        place.setObject(collegeArray[chosen].login as CKRecordValue?, forKey: "login")
+        place.setObject(collegeArray[chosen].password as CKRecordValue?, forKey: "password")
+        place.setObject(collegeArray[chosen].difficulty as CKRecordValue?, forKey: "difficulty")
+        place.setObject(collegeArray[chosen].decisionDate as CKRecordValue?, forKey: "decisionDate")
+        place.setObject(collegeArray[chosen].testType as CKRecordValue?, forKey: "test")
+        place.setObject(collegeArray[chosen].accepted as CKRecordValue?, forKey: "accepted")
+        place.setObject(collegeArray[chosen].essaysRequired as CKRecordValue?, forKey: "essaysRequired")
+        place.setObject(collegeArray[chosen].essaysDone as CKRecordValue?, forKey: "essaysDone")
+        place.setObject(collegeArray[chosen].counselorRecNeeded as CKRecordValue?, forKey: "counselorRec")
+        place.setObject(collegeArray[chosen].counselorRecDone as CKRecordValue?, forKey: "counselorRecDone")
+        place.setObject(collegeArray[chosen].teacherRecNeeded as CKRecordValue?, forKey: "teacherRec")
+        place.setObject(collegeArray[chosen].teacherRecDone as CKRecordValue?, forKey: "teacherRecDone")
+        place.setObject(collegeArray[chosen].testSent as CKRecordValue?, forKey: "testSent")
+        modifyRecords.modifyRecordsCompletionBlock = { savedRecords, ID, error in
+            if error == nil {
+                print("Modified")
+            }
+            else {
+                print(error)
+            }
+        }
+        previousVC.database.add(modifyRecords)
     }
-    
-
 }
+

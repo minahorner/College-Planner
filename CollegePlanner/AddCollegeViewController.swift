@@ -46,13 +46,13 @@ class AddCollegeViewController: UIViewController {
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
         addCollege.testType = inputtedTest.text!
-        addCollege.accepted = false
-        addCollege.counselorRecDone =  false
-        addCollege.counselorRecNeeded = false
-        addCollege.teacherRecDone = false
-        addCollege.teacherRecNeeded = false
-        addCollege.testSent = false
-        addCollege.essaysDone = false
+        addCollege.accepted = "2"
+        addCollege.counselorRecDone =  "2"
+        addCollege.counselorRecNeeded = "2"
+        addCollege.teacherRecDone = "2"
+        addCollege.teacherRecNeeded = "2"
+        addCollege.testSent = "2"
+        addCollege.essaysDone = "2"
         
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
