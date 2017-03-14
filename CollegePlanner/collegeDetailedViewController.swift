@@ -66,11 +66,11 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         login_TextField.isHidden = true
         password_TextField.isHidden = true
         difficulty_TextField.isHidden = true
+        //testType_TextField.isHidden = true
         changeDeadline.isHidden = true
         changeDeadline.isEnabled = false
-        //collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
-        collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
         
+        collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
         
         schoolName.text = collegeArray[chosen].collegeName
         schoolLocation.text = collegeArray[chosen].collegeLocation
@@ -81,7 +81,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         deadline.text = collegeArray[chosen].decisionDate
         
         schoolName_TextField.text = collegeArray[chosen].collegeName
-        login_TextField.text = collegeArray[chosen].collegeLocation
+        location_TextField.text = collegeArray[chosen].collegeLocation
+        login_TextField.text = collegeArray[chosen].login
         testType_TextField.text = collegeArray[chosen].testType
         login_TextField.text = collegeArray[chosen].login
         password_TextField.text = collegeArray[chosen].password
@@ -129,9 +130,10 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
                 
             }else{
                 cell.accessoryType = .none
-                collegeChecklist[indexPath.row] = "2"
+                collegeChecklist[indexPath.row] = "0"
             }
             refreshChecklist()
+            updateCloud()
             print(collegeArray[chosen].essaysDone)
         }
     }
@@ -184,6 +186,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password_TextField.isHidden = false
             difficulty_TextField.isHidden = false
             changeDeadline.isHidden = false
+            testType_TextField.isHidden = false
             changeDeadline.setTitle(deadline.text, for: .normal)
             changeDeadline.isEnabled = true
             schoolName.isHidden = true
@@ -193,6 +196,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = true
             difficulty.isHidden = true
             deadline.isHidden = true
+            testType.isHidden = true
+            
         }
         else{
             super.setEditing(editing, animated: animated)
@@ -211,11 +216,16 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = false
             difficulty.isHidden = false
             deadline.isHidden = false
+            testType.isHidden = false
+            
+            testType.text = testType_TextField.text
+            
             collegeArray[chosen].collegeName = schoolName_TextField.text!
             collegeArray[chosen].collegeLocation = location_TextField.text!
             collegeArray[chosen].login = login_TextField.text!
             collegeArray[chosen].password = password_TextField.text!
             collegeArray[chosen].difficulty = difficulty_TextField.text!
+            collegeArray[chosen].testType = testType_TextField.text!
             
             schoolName.text = collegeArray[chosen].collegeName
             schoolLocation.text = collegeArray[chosen].collegeLocation
@@ -223,6 +233,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.text = collegeArray[chosen].password
             difficulty.text = collegeArray[chosen].difficulty
             deadline.text = collegeArray[chosen].decisionDate
+            testType.text = collegeArray[chosen].testType
             previousVC.collegeTableView.reloadData()
             editButton1 = 0
             updateCloud()

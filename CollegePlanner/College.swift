@@ -24,13 +24,13 @@ class College{
         self.login = login
         self.password = password
         self.difficulty = difficulty
-        self.counselorRecNeeded = "2"
-        self.counselorRecDone = "2"
-        self.teacherRecNeeded = "2"
-        self.teacherRecDone = "2"
-        self.essaysDone = "2"
-        self.testSent = "2"
-        self.accepted = "2"
+        self.counselorRecNeeded = "0"
+        self.counselorRecDone = "0"
+        self.teacherRecNeeded = "0"
+        self.teacherRecDone = "0"
+        self.essaysDone = "0"
+        self.testSent = "0"
+        self.accepted = "0"
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
     }
