@@ -11,6 +11,7 @@ import UIKit
 class SideBarMenuViewController: UITableViewController {
 
    // var categories = ["All Colleges", "Help"]
+    var collegeType = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,17 @@ class SideBarMenuViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = ViewController()
+        vc.collegeType = self.collegeType
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        collegeType = indexPath.row
     }
 
     // MARK: - Table view data source

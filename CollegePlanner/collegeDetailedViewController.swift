@@ -61,8 +61,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         difficulty_TextField.isHidden = true
         changeDeadline.isHidden = true
         changeDeadline.isEnabled = false
-        collegeChecklist = [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
-        
+       collegeChecklist =   [collegeArrays.allColleges[chosen].testSent, collegeArrays.allColleges[chosen].essaysDone, collegeArrays.allColleges[chosen].counselorRecDone, collegeArrays.allColleges[chosen].teacherRecDone, collegeArrays.allColleges[chosen].accepted]
+        //!!!!!change the boolean thing here!!!!!
         schoolName.text = collegeArrays.allColleges[chosen].collegeName
         schoolLocation.text = collegeArrays.allColleges[chosen].collegeLocation
         testType.text = collegeArrays.allColleges[chosen].testType

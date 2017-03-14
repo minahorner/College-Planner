@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HoK-oj-ixB">
-                                <rect key="frame" x="-1" y="0.0" width="769" height="1024"/>
+                                <rect key="frame" x="-1" y="0.0" width="769" height="960"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.78938301282051282" green="0.78938301282051282" blue="0.78938301282051282" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -81,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935.15625" y="136.5234375"/>
+            <point key="canvasLocation" x="2008.59375" y="136.5234375"/>
         </scene>
         <!--Help-->
         <scene sceneID="ClC-4y-vHM">
@@ -547,7 +547,7 @@ four year college to finish their degree.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXd-yn-7FT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934.375" y="3194.53125"/>
+            <point key="canvasLocation" x="-713" y="3138"/>
         </scene>
         <!--Add College View Controller-->
         <scene sceneID="xqQ-JR-cpZ">
@@ -710,9 +710,9 @@ four year college to finish their degree.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vey-Zu-ySS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3034.375" y="219.7265625"/>
+            <point key="canvasLocation" x="3027" y="172"/>
         </scene>
-        <!--Edit College-->
+        <!--College Details-->
         <scene sceneID="61b-uX-CnV">
             <objects>
                 <viewController storyboardIdentifier="detailedViewController" id="H5V-Ha-zl1" customClass="collegeDetailedViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -973,7 +973,7 @@ four year college to finish their degree.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit College" id="CdG-Nu-cRy">
+                    <navigationItem key="navigationItem" title="College Details" id="CdG-Nu-cRy">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="jYw-Ry-F4f"/>
                     </navigationItem>
                     <connections>
@@ -1106,11 +1106,31 @@ four year college to finish their degree.</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="IsX-xM-xI4" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="iPF-bN-MyN"/>
+                                            <segue destination="IsX-xM-xI4" kind="custom" identifier="toAll" customClass="SWRevealViewControllerSeguePushController" id="iPF-bN-MyN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fVg-K4-9Og" style="IBUITableViewCellStyleDefault" id="lSR-Jy-XtS">
+                                        <rect key="frame" x="0.0" y="108" width="768" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lSR-Jy-XtS" id="HRK-3o-hJA">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Accepted Colleges" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fVg-K4-9Og">
+                                                    <rect key="frame" x="48" y="0.0" width="672" height="107"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IsX-xM-xI4" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="kaO-UK-h34"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="fc8-XV-SKd" style="IBUITableViewCellStyleDefault" id="ZSc-9z-jRs">
-                                        <rect key="frame" x="0.0" y="108" width="768" height="108"/>
+                                        <rect key="frame" x="0.0" y="216" width="768" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZSc-9z-jRs" id="VFa-op-LPQ">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="107"/>
@@ -1180,7 +1200,7 @@ four year college to finish their degree.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmS-OC-rhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="917"/>
+            <point key="canvasLocation" x="-1500" y="860"/>
         </scene>
     </scenes>
     <resources>

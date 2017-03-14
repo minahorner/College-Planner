@@ -61,7 +61,7 @@ class AddCollegeViewController: UIViewController {
         //addCollege.essaysDone = false
         //addCollege.essaysRequired = ""
         //addCollege.accepted = false
-        previousVC.collegeArray.append(addCollege)
+       // previousVC.collegeArray.append(addCollege)
         updateCloud(newCollege: addCollege)
         self.dismiss(animated: true, completion: nil)
     }
