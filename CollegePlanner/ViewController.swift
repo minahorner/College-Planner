@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         if(segue.identifier == "segueToDetailed"){
             let vc = segue.destination as! collegeDetailedViewController
-            vc.collegeArrays = self.collegeArrays
+            vc.collegeArray = self.collegeArray
             vc.chosen = (collegeTableView.indexPathForSelectedRow?.row)!
             vc.previousVC = self
         }

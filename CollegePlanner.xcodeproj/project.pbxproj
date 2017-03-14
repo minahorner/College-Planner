@@ -25,7 +25,6 @@
 		D7D890E21E7835BA00284627 /* ThinkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D890E11E7835BA00284627 /* ThinkingViewController.swift */; };
 		D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */; };
 		D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */; };
-		D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		D7E81A4A1DF1CED2009A5524 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D7E81A4B1DF1CED2009A5524 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuViewController.swift; sourceTree = "<group>"; };
-		D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCollegeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,6 @@
 				D7E81A4D1DF1CF88009A5524 /* SideBarMenuViewController.swift */,
 				D76915651DDF57FD001B121D /* College.swift */,
 				D78B95891DE34FF6009EB527 /* collegeDetailedViewController.swift */,
-				D7F342011DEDDDA300B760DD /* EditCollegeViewController.swift */,
 				D734AE5D1DEC8CB100DDB30A /* AddCollegeViewController.swift */,
 				D7A11DE01E43959F00014796 /* DatePickerViewController.swift */,
 				D7BAB49B1DE4A7BB005BEFB1 /* arrayTransfer.swift */,
@@ -222,7 +219,6 @@
 				D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */,
 				D7D890E21E7835BA00284627 /* ThinkingViewController.swift in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
-				D7F342021DEDDDA300B760DD /* EditCollegeViewController.swift in Sources */,
 				D734AE5E1DEC8CB100DDB30A /* AddCollegeViewController.swift in Sources */,
 				D76915661DDF57FD001B121D /* College.swift in Sources */,
 				D7589D521E44E20000D33D03 /* Protocol.swift in Sources */,
