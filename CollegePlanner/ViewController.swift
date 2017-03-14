@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
+    var collegeType = 0
     // var chosen = 0
     
     //nav bar:42, 121, 170
@@ -31,9 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getColleges()
+        print("\(collegeType) this is the college type")
         letsTry()
         something = "yep"
-        getColleges()
+        //getColleges()
         print(collegeArray.count)
         //collegeArrays.allColleges.append(College(collegeName: "Tufts", studentbodyGender: "Coed", collegeLocation: "Medford, MA", testType: "ACT w/out Writing, SAT w/out Writing", decisionDate: "1/01/17", essaysRequired: "4", testPolicy: "Always Required", login: "N/A", password: "N/A", difficulty: "Reach"))
         
@@ -52,14 +55,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    /*override func viewWillAppear(_ animated: Bool) {
+        getColleges()
+        collegeTableView.reloadData()
+        print("will")
+    }
+ */
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        collegeTableView.reloadData()
-        print("hi")
     }
     
     func letsTry(){
@@ -90,6 +96,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
         return collegeArray.count
     }
     
@@ -148,7 +155,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, accepted: accepted)
                 
+                if self.collegeType == 0 || (self.collegeType == 3 && currentCollege.accepted == "1"){
                 self.collegeArray.append(currentCollege)
+                }
                 
             }
             

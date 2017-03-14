@@ -14,19 +14,26 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
     @IBOutlet weak var testType: UILabel!
-    
+   
     @IBOutlet weak var login: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var deadline: UILabel!
+    @IBOutlet weak var collegeTypeLabel: UILabel!
+    
+    
     @IBOutlet weak var schoolName_TextField: UITextField!
     @IBOutlet weak var location_TextField: UITextField!
     @IBOutlet weak var testType_TextField: UITextField!
-    
     @IBOutlet weak var login_TextField: UITextField!
     @IBOutlet weak var password_TextField: UITextField!
     @IBOutlet weak var difficulty_TextField: UITextField!
+    
+    
     @IBOutlet weak var changeDeadline: UIButton!
+    @IBOutlet weak var thinkingAboutButton: UIButton!
+    @IBOutlet weak var applyingToButton: UIButton!
+    @IBOutlet weak var acceptedButton: UIButton!
     
     var originalName = ""
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -182,7 +189,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password_TextField.isHidden = false
             difficulty_TextField.isHidden = false
             changeDeadline.isHidden = false
-            testType_TextField.isHidden = false
+            //testType_TextField.isHidden = false
             changeDeadline.setTitle(deadline.text, for: .normal)
             changeDeadline.isEnabled = true
             schoolName.isHidden = true
@@ -192,7 +199,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = true
             difficulty.isHidden = true
             deadline.isHidden = true
-            testType.isHidden = true
+            //testType.isHidden = true
             
         }
         else{
@@ -212,7 +219,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             password.isHidden = false
             difficulty.isHidden = false
             deadline.isHidden = false
-            testType.isHidden = false
+            //testType.isHidden = false
             
             testType.text = testType_TextField.text
             
