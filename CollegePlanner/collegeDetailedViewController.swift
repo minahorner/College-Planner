@@ -14,19 +14,25 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var schoolLocation: UILabel!
     @IBOutlet weak var schoolName: UILabel!
     @IBOutlet weak var testType: UILabel!
-    
     @IBOutlet weak var login: UILabel!
     @IBOutlet weak var password: UILabel!
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var deadline: UILabel!
+    @IBOutlet weak var collegeTypeLabel: UILabel!
+    
+    
     @IBOutlet weak var schoolName_TextField: UITextField!
     @IBOutlet weak var location_TextField: UITextField!
     @IBOutlet weak var testType_TextField: UITextField!
-    
     @IBOutlet weak var login_TextField: UITextField!
     @IBOutlet weak var password_TextField: UITextField!
     @IBOutlet weak var difficulty_TextField: UITextField!
+    
+    
     @IBOutlet weak var changeDeadline: UIButton!
+    @IBOutlet weak var thinkingAboutButton: UIButton!
+    @IBOutlet weak var applyingToButton: UIButton!
+    @IBOutlet weak var acceptedButton: UIButton!
     
     var originalName = ""
     @IBOutlet weak var editButton: UIBarButtonItem!
