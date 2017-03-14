@@ -32,7 +32,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(collegeType)
+        getColleges()
+        print("\(collegeType) this is the college type")
         letsTry()
         something = "yep"
         //getColleges()
@@ -54,11 +55,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    /*override func viewWillAppear(_ animated: Bool) {
         getColleges()
         collegeTableView.reloadData()
         print("will")
     }
+ */
     
     
     override func didReceiveMemoryWarning() {
@@ -153,10 +155,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, accepted: accepted)
                 
-               // if collegeType == 0 || (collegeType == 1 && currentCollege.accepted == "1"){
-                
+                if self.collegeType == 0 || (self.collegeType == 3 && currentCollege.accepted == "1"){
                 self.collegeArray.append(currentCollege)
-               // }
+                }
                 
             }
             
