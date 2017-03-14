@@ -42,17 +42,18 @@ class AddCollegeViewController: UIViewController {
         addCollege.decisionDate = dateFormatter.string(from: deadlineDatePicker.date)
         addCollege.collegeName = inputtedName.text!
         addCollege.collegeLocation = inputtedLocation.text!
+        addCollege.testType = inputtedTest.text!
         addCollege.login = login.text!
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
         addCollege.testType = inputtedTest.text!
-        addCollege.accepted = "2"
-        addCollege.counselorRecDone =  "2"
-        addCollege.counselorRecNeeded = "2"
-        addCollege.teacherRecDone = "2"
-        addCollege.teacherRecNeeded = "2"
-        addCollege.testSent = "2"
-        addCollege.essaysDone = "2"
+        addCollege.accepted = "0"
+        addCollege.counselorRecDone =  "0"
+        addCollege.counselorRecNeeded = "0"
+        addCollege.teacherRecDone = "0"
+        addCollege.teacherRecNeeded = "0"
+        addCollege.testSent = "0"
+        addCollege.essaysDone = "0"
         
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
@@ -85,14 +86,14 @@ class AddCollegeViewController: UIViewController {
         place.setObject(newCollege.difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(newCollege.decisionDate as CKRecordValue?, forKey: "decisionDate")
         place.setObject(newCollege.testType as CKRecordValue?, forKey: "test")
-        place.setObject("2" as CKRecordValue?, forKey: "accepted")
-        place.setObject("2" as CKRecordValue?, forKey: "essaysRequired")
-        place.setObject("2" as CKRecordValue?, forKey: "essaysDone")
-        place.setObject("2" as CKRecordValue?, forKey: "counselorRec")
-        place.setObject("2" as CKRecordValue?, forKey: "counselorRecDone")
-        place.setObject("2" as CKRecordValue?, forKey: "teacherRec")
-        place.setObject("2" as CKRecordValue?, forKey: "teacherRecDone")
-        place.setObject("2" as CKRecordValue?, forKey: "testSent")
+        place.setObject("0" as CKRecordValue?, forKey: "accepted")
+        place.setObject("0" as CKRecordValue?, forKey: "essaysRequired")
+        place.setObject("0" as CKRecordValue?, forKey: "essaysDone")
+        place.setObject("0" as CKRecordValue?, forKey: "counselorRec")
+        place.setObject("0" as CKRecordValue?, forKey: "counselorRecDone")
+        place.setObject("0" as CKRecordValue?, forKey: "teacherRec")
+        place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
+        place.setObject("0" as CKRecordValue?, forKey: "testSent")
         database.save(place) { (record, error) in
             if(error == nil){
                 print("saved")
