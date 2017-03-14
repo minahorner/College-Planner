@@ -28,10 +28,10 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var difficulty_TextField: UITextField!
     @IBOutlet weak var changeDeadline: UIButton!
     
-
-
+    var originalName = ""
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    var collegeArray : [College] = [College]()
     var editButton1 = 0
     
     
@@ -39,7 +39,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     var collegeChecklist: [String] = []
    
     @IBOutlet weak var checklistTableView: UITableView!
-    var collegeArray : [College] = [College]()
     
     var previousVC : ViewController!
     var chosen = 0
@@ -87,7 +86,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-
+        originalName = collegeArray[chosen].collegeName
         
     }
 
@@ -162,6 +161,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         //cell.accessoryType = .checkmark
         //checkCheckmark(indexPath: indexPath)
         //cell.accessoryType = .checkmark
+
         return cell
     }
     
@@ -219,6 +219,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             deadline.text = collegeArray[chosen].decisionDate
             previousVC.collegeTableView.reloadData()
             editButton1 = 0
+            updateCloud()
             
             
         }
@@ -238,7 +239,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func updateCloud(){
-        let ID = CKRecordID(recordName: collegeArray[chosen].collegeName)
+        let ID = CKRecordID(recordName: originalName)
         let place = CKRecord(recordType: "College", recordID: ID)
         let modifyRecords = CKModifyRecordsOperation(recordsToSave: [place], recordIDsToDelete: nil)
         modifyRecords.savePolicy = CKRecordSavePolicy.allKeys
