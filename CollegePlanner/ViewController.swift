@@ -165,7 +165,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             DispatchQueue.main.async {
                 self.collegeTableView.reloadData()
-                print(self.collegeArray.count)
             }
         }
     }
