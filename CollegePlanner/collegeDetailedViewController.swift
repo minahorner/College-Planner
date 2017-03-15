@@ -42,7 +42,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     var editButton1 = 0
     
     
-    var checklist = ["Tests", "Essays", "Counselor Rec", "Teacher Rec", "Acceptance"]
+    var checklist = ["Tests", "Essays", "Counselor Rec", "Teacher Rec"]
     var collegeChecklist: [String] = []
    
     @IBOutlet weak var checklistTableView: UITableView!
@@ -61,15 +61,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         frameRect.size.height = 47; // <-- Specify the height you want here.
         
         schoolName_TextField.frame = frameRect;
-        schoolName_TextField.isHidden = true
-        location_TextField.isHidden = true
-        testType_TextField.isHidden = true
-        login_TextField.isHidden = true
-        password_TextField.isHidden = true
-        difficulty_TextField.isHidden = true
-        //testType_TextField.isHidden = true
-        changeDeadline.isHidden = true
-        changeDeadline.isEnabled = false
         
         collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
 
@@ -161,7 +152,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 5
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -183,44 +174,14 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             super.setEditing(editing, animated: animated)
             print("works")
             editButton1 = 1
-            schoolName_TextField.isHidden = false
-            location_TextField.isHidden = false
-            testType_TextField.isHidden = false
-            login_TextField.isHidden = false
-            password_TextField.isHidden = false
-            difficulty_TextField.isHidden = false
-            changeDeadline.isHidden = false
-            //testType_TextField.isHidden = false
-            changeDeadline.setTitle(deadline.text, for: .normal)
-            changeDeadline.isEnabled = true
-            schoolName.isHidden = true
-            schoolLocation.isHidden = true
-            testType.isHidden = true
-            login.isHidden = true
-            password.isHidden = true
-            difficulty.isHidden = true
-            deadline.isHidden = true
-            //testType.isHidden = true
+            
+            hide(value: 1)//show editing
             
         }
         else{
             super.setEditing(editing, animated: animated)
-            schoolName_TextField.isHidden = true
-            location_TextField.isHidden = true
-            testType_TextField.isHidden = true
-            login_TextField.isHidden = true
-            password_TextField.isHidden = true
-            difficulty_TextField.isHidden = true
-            changeDeadline.isHidden = true
-            changeDeadline.isEnabled = false
-            schoolName.isHidden = false
-            schoolLocation.isHidden = false
-            testType.isHidden = false
-            login.isHidden = false
-            password.isHidden = false
-            difficulty.isHidden = false
-            deadline.isHidden = false
-            //testType.isHidden = false
+            
+            hide(value: 0)//hide editing
             
             testType.text = testType_TextField.text
             
@@ -245,6 +206,76 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
             
         }
     }
+    
+    @IBAction func thinkingPressed(_ sender: UIButton) {
+        collegeTypeLabel.text = "Thinking About"
+        thinkingAboutButton.backgroundColor = UIColor.cyan
+        applyingToButton.backgroundColor = UIColor.clear
+        acceptedButton.backgroundColor = UIColor.clear
+    }
+    @IBAction func applyingPressed(_ sender: UIButton) {
+        collegeTypeLabel.text = "Applying To"
+        thinkingAboutButton.backgroundColor = UIColor.clear
+        applyingToButton.backgroundColor = UIColor.cyan
+        acceptedButton.backgroundColor = UIColor.clear
+        
+    }
+    @IBAction func acceptedPressed(_ sender: UIButton) {
+        collegeTypeLabel.text = "Accepted"
+        thinkingAboutButton.backgroundColor = UIColor.clear
+        applyingToButton.backgroundColor = UIColor.clear
+        acceptedButton.backgroundColor = UIColor.cyan
+    }
+    
+    
+    func hide(value:Int){
+        if(value == 1){
+            schoolName_TextField.isHidden = false
+            location_TextField.isHidden = false
+            testType_TextField.isHidden = false
+            login_TextField.isHidden = false
+            password_TextField.isHidden = false
+            difficulty_TextField.isHidden = false
+            changeDeadline.isHidden = false
+            thinkingAboutButton.isHidden = false
+            applyingToButton.isHidden = false
+            acceptedButton.isHidden = false
+            //testType_TextField.isHidden = false
+            changeDeadline.setTitle(deadline.text, for: .normal)
+            changeDeadline.isEnabled = true
+            schoolName.isHidden = true
+            schoolLocation.isHidden = true
+            testType.isHidden = true
+            login.isHidden = true
+            password.isHidden = true
+            difficulty.isHidden = true
+            deadline.isHidden = true
+            collegeTypeLabel.isHidden = true
+        }else if(value == 0){
+            schoolName_TextField.isHidden = true
+            location_TextField.isHidden = true
+            testType_TextField.isHidden = true
+            login_TextField.isHidden = true
+            password_TextField.isHidden = true
+            difficulty_TextField.isHidden = true
+            thinkingAboutButton.isHidden = true
+            applyingToButton.isHidden = true
+            acceptedButton.isHidden = true
+            changeDeadline.isHidden = true
+            changeDeadline.isEnabled = false
+            schoolName.isHidden = false
+            schoolLocation.isHidden = false
+            testType.isHidden = false
+            login.isHidden = false
+            password.isHidden = false
+            difficulty.isHidden = false
+            deadline.isHidden = false
+            collegeTypeLabel.isHidden = false
+            //testType.isHidden = false
+        }
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? DatePickerViewController
@@ -272,7 +303,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         place.setObject(collegeArray[chosen].difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(collegeArray[chosen].decisionDate as CKRecordValue?, forKey: "decisionDate")
         place.setObject(collegeArray[chosen].testType as CKRecordValue?, forKey: "test")
-        place.setObject(collegeArray[chosen].accepted as CKRecordValue?, forKey: "accepted")
+        //place.setObject(collegeArray[chosen].accepted as CKRecordValue?, forKey: "accepted")
         place.setObject(collegeArray[chosen].essaysRequired as CKRecordValue?, forKey: "essaysRequired")
         place.setObject(collegeArray[chosen].essaysDone as CKRecordValue?, forKey: "essaysDone")
         place.setObject(collegeArray[chosen].counselorRecNeeded as CKRecordValue?, forKey: "counselorRec")
