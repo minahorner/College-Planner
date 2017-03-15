@@ -42,7 +42,7 @@ class DatePickerViewController: UIViewController {
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mma"
         stringDate = dateFormatter.string(from: date)
         //stringDate = date.description
         

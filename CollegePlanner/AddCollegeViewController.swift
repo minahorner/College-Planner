@@ -27,6 +27,10 @@ class AddCollegeViewController: UIViewController {
     
     @IBOutlet weak var inputtedTest: UITextField!
     
+    @IBOutlet weak var applyingToButton: UIButton!
+    @IBOutlet weak var acceptedButton: UIButton!
+    @IBOutlet weak var thinkingAboutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barStyle = UIBarStyle.black
@@ -71,6 +75,31 @@ class AddCollegeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func thinkingPressed(_ sender: UIButton) {
+        thinkingAboutButton.backgroundColor = UIColor.cyan
+        applyingToButton.backgroundColor = UIColor.clear
+        acceptedButton.backgroundColor = UIColor.clear
+        //alter college here
+        
+    }
+    @IBAction func applyingPressed(_ sender: UIButton) {
+        thinkingAboutButton.backgroundColor = UIColor.clear
+        applyingToButton.backgroundColor = UIColor.cyan
+        acceptedButton.backgroundColor = UIColor.clear
+        //alter college here
+    }
+    @IBAction func acceptedPressed(_ sender: UIButton) {
+        thinkingAboutButton.backgroundColor = UIColor.clear
+        applyingToButton.backgroundColor = UIColor.clear
+        acceptedButton.backgroundColor = UIColor.cyan
+        //alter college here
+        
+    }
+   
+    
+    
+    
     
     @IBAction func cancel(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
