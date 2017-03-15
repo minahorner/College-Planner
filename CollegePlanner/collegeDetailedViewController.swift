@@ -72,7 +72,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         changeDeadline.isEnabled = false
         
         collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
-        print("\(collegeChecklist[4])" + "This is the accepted saved integer")
+
         print("\(collegeArray[chosen].accepted)" + "This is what is saved")
         
         schoolName.text = collegeArray[chosen].collegeName
@@ -128,7 +128,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         if let cell = checklistTableView.cellForRow(at: indexPath) {
             if(cell.accessoryType != .checkmark){
             cell.accessoryType = .checkmark
-                collegeChecklist[indexPath.row] = "1"
+            collegeChecklist[indexPath.row] = "1"
                 
                 
             }else{
@@ -136,8 +136,8 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
                 collegeChecklist[indexPath.row] = "0"
             }
             refreshChecklist()
+            print(collegeChecklist[indexPath.row])
             updateCloud()
-            print(collegeArray[chosen].essaysDone)
         }
     }
     
@@ -156,6 +156,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         collegeArray[chosen].counselorRecDone = collegeChecklist[2]
         collegeArray[chosen].teacherRecDone = collegeChecklist[3]
         collegeArray[chosen].accepted = collegeChecklist[4]
+        print("\(collegeChecklist[4])" + "This is the accepted saved integer")
     }
     
     
@@ -259,7 +260,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func updateCloud(){
-        let ID = CKRecordID(recordName: originalName)
+        let ID = CKRecordID(recordName: collegeArray[chosen].recordID)
         let place = CKRecord(recordType: "College", recordID: ID)
         let modifyRecords = CKModifyRecordsOperation(recordsToSave: [place], recordIDsToDelete: nil)
         modifyRecords.savePolicy = CKRecordSavePolicy.allKeys
