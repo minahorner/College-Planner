@@ -52,7 +52,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
@@ -62,9 +61,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         schoolName_TextField.frame = frameRect;
         
-        collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone, collegeArray[chosen].accepted]
-
-        print("\(collegeArray[chosen].accepted)" + "This is what is saved")
+        hide(value: 0) //hide editing
         
         schoolName.text = collegeArray[chosen].collegeName
         schoolLocation.text = collegeArray[chosen].collegeLocation
@@ -127,7 +124,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
                 collegeChecklist[indexPath.row] = "0"
             }
             refreshChecklist()
-            print(collegeChecklist[indexPath.row])
             updateCloud()
         }
     }
@@ -146,8 +142,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         collegeArray[chosen].essaysDone = collegeChecklist[1]
         collegeArray[chosen].counselorRecDone = collegeChecklist[2]
         collegeArray[chosen].teacherRecDone = collegeChecklist[3]
-        collegeArray[chosen].accepted = collegeChecklist[4]
-        print("\(collegeChecklist[4])" + "This is the accepted saved integer")
     }
     
     
@@ -303,7 +297,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         place.setObject(collegeArray[chosen].difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(collegeArray[chosen].decisionDate as CKRecordValue?, forKey: "decisionDate")
         place.setObject(collegeArray[chosen].testType as CKRecordValue?, forKey: "test")
-        //place.setObject(collegeArray[chosen].accepted as CKRecordValue?, forKey: "accepted")
         place.setObject(collegeArray[chosen].essaysRequired as CKRecordValue?, forKey: "essaysRequired")
         place.setObject(collegeArray[chosen].essaysDone as CKRecordValue?, forKey: "essaysDone")
         place.setObject(collegeArray[chosen].counselorRecNeeded as CKRecordValue?, forKey: "counselorRec")

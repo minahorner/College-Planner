@@ -33,11 +33,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         getColleges()
-        print("\(collegeType) this is the college type")
         letsTry()
         something = "yep"
         //getColleges()
-        print(collegeArray.count)
         //collegeArrays.allColleges.append(College(collegeName: "Tufts", studentbodyGender: "Coed", collegeLocation: "Medford, MA", testType: "ACT w/out Writing, SAT w/out Writing", decisionDate: "1/01/17", essaysRequired: "4", testPolicy: "Always Required", login: "N/A", password: "N/A", difficulty: "Reach"))
         
         //collegeArrays.allColleges[0].testSent = true
@@ -83,10 +81,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             vc.database = self.database
         }
         if(segue.identifier == "segueToDetailed"){
+            var num = (collegeTableView.indexPathForSelectedRow?.row)!
             let vc = segue.destination as! collegeDetailedViewController
             vc.collegeArray = self.collegeArray
             vc.chosen = (collegeTableView.indexPathForSelectedRow?.row)!
             vc.previousVC = self
+            vc.collegeChecklist = [collegeArray[num].testSent, collegeArray[num].essaysDone, collegeArray[num].counselorRecDone, collegeArray[num].teacherRecDone]
         }
     }
     
@@ -151,9 +151,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let counselorRecDone = college.object(forKey: "counselorRecDone") as! String
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
-                let accepted = college.object(forKey: "accepted") as! String
                 
-                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, accepted: accepted)
+                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent)
                 
                 if self.collegeType == 0 || (self.collegeType == 3 && currentCollege.accepted == "1"){
                 self.collegeArray.append(currentCollege)

@@ -15,7 +15,7 @@ class College{
     }
     
     init (collegeName: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, login: String, password: String, difficulty : String, counselorRecNeeded : String, counselorRecDone : String,
-          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String, accepted : String) {
+          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String) {
         self.collegeName = collegeName
         self.collegeLocation = collegeLocation
         self.testType = testType
@@ -30,7 +30,6 @@ class College{
         self.teacherRecDone = "0"
         self.essaysDone = "0"
         self.testSent = "0"
-        self.accepted = "0"
         self.recordID = collegeName
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         

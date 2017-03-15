@@ -51,7 +51,6 @@ class AddCollegeViewController: UIViewController {
         addCollege.password = password.text!
         addCollege.difficulty = difficulty.text!
         addCollege.testType = inputtedTest.text!
-        addCollege.accepted = "0"
         addCollege.counselorRecDone =  "0"
         addCollege.counselorRecNeeded = "0"
         addCollege.teacherRecDone = "0"
@@ -115,7 +114,6 @@ class AddCollegeViewController: UIViewController {
         place.setObject(newCollege.difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(newCollege.decisionDate as CKRecordValue?, forKey: "decisionDate")
         place.setObject(newCollege.testType as CKRecordValue?, forKey: "test")
-        place.setObject("0" as CKRecordValue?, forKey: "accepted")
         place.setObject("0" as CKRecordValue?, forKey: "essaysRequired")
         place.setObject("0" as CKRecordValue?, forKey: "essaysDone")
         place.setObject("0" as CKRecordValue?, forKey: "counselorRec")
