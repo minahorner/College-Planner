@@ -22,6 +22,9 @@ class AddCollegeViewController: UIViewController {
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var difficulty: UITextField!
+    @IBOutlet weak var numOfEssays: UITextField!
+    @IBOutlet weak var numOfTeacherRecs: UITextField!
+    @IBOutlet weak var numOfCounselorRecs: UITextField!
     
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     
