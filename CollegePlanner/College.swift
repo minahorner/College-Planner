@@ -24,13 +24,13 @@ class College{
         self.login = login
         self.password = password
         self.difficulty = difficulty
-        self.counselorRecNeeded = "0"
-        self.counselorRecDone = "0"
-        self.teacherRecNeeded = "0"
-        self.teacherRecDone = "0"
-        self.essaysDone = "0"
-        self.testSent = "0"
-        self.recordID = collegeName
+        self.counselorRecNeeded = counselorRecNeeded
+        self.counselorRecDone = counselorRecDone
+        self.teacherRecNeeded = teacherRecNeeded
+        self.teacherRecDone = teacherRecDone
+        self.essaysDone = essaysDone
+        self.testSent = testSent
+        self.recordID = "\(drand48())"
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
     }

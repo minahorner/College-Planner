@@ -52,6 +52,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collegeChecklist = [collegeArray[chosen].testSent, collegeArray[chosen].essaysDone, collegeArray[chosen].counselorRecDone, collegeArray[chosen].teacherRecDone]
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
@@ -138,6 +139,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
  */
     
     func refreshChecklist(){
+        print("\(collegeChecklist[0])" + "This is the refresh Checklist")
         collegeArray[chosen].testSent = collegeChecklist[0]
         collegeArray[chosen].essaysDone = collegeChecklist[1]
         collegeArray[chosen].counselorRecDone = collegeChecklist[2]
@@ -285,6 +287,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func updateCloud(){
+        
         let ID = CKRecordID(recordName: collegeArray[chosen].recordID)
         let place = CKRecord(recordType: "College", recordID: ID)
         let modifyRecords = CKModifyRecordsOperation(recordsToSave: [place], recordIDsToDelete: nil)
