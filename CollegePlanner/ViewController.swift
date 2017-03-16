@@ -154,7 +154,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent)
                 
                 self.collegeArray.append(currentCollege)
-                print(self.collegeArray[0].recordID)
             }
             
             self.CKRecordCollege = records!

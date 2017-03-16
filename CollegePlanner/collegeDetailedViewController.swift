@@ -34,10 +34,9 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var thinkingAboutButton: UIButton!
     @IBOutlet weak var applyingToButton: UIButton!
     @IBOutlet weak var acceptedButton: UIButton!
-    
-    var originalName = ""
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    var collegeType = ""
     var collegeArray : [College] = [College]()
     var editButton1 = 0
     
@@ -85,7 +84,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        originalName = collegeArray[chosen].collegeName
         
     }
 
@@ -139,7 +137,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
  */
     
     func refreshChecklist(){
-        print("\(collegeChecklist[0])" + "This is the refresh Checklist")
         collegeArray[chosen].testSent = collegeChecklist[0]
         collegeArray[chosen].essaysDone = collegeChecklist[1]
         collegeArray[chosen].counselorRecDone = collegeChecklist[2]

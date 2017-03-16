@@ -15,7 +15,7 @@ class College{
     }
     
     init (collegeName: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, login: String, password: String, difficulty : String, counselorRecNeeded : String, counselorRecDone : String,
-          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String) {
+          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String, collegeType : String) {
         self.collegeName = collegeName
         self.collegeLocation = collegeLocation
         self.testType = testType
@@ -30,6 +30,7 @@ class College{
         self.teacherRecDone = teacherRecDone
         self.essaysDone = essaysDone
         self.testSent = testSent
+        self.collegeType = collegeType
         self.recordID = "\(drand48())"
         //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
         
@@ -52,6 +53,7 @@ class College{
     var essaysDone: String = ""
     var testSent: String = ""
     var accepted : String = ""
+    var collegeType : String = ""
     
     //var checklist: [Bool] = [testSent]
     

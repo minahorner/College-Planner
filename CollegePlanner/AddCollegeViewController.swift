@@ -41,6 +41,7 @@ class AddCollegeViewController: UIViewController {
     
     @IBAction func addButtonPressed(_
         sender: UIButton) {
+        //need to add the option to put in inputted information for number of essays and number of teacher recs needed
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
         addCollege.decisionDate = dateFormatter.string(from: deadlineDatePicker.date)
@@ -57,6 +58,8 @@ class AddCollegeViewController: UIViewController {
         addCollege.teacherRecNeeded = "0"
         addCollege.testSent = "0"
         addCollege.essaysDone = "0"
+        addCollege.essaysRequired = "0"
+        addCollege.teacherRecNeeded = "0"
         addCollege.recordID = "\(drand48())"
         
         //addCollege.teacherRecNeeded = false
@@ -115,11 +118,11 @@ class AddCollegeViewController: UIViewController {
         place.setObject(newCollege.difficulty as CKRecordValue?, forKey: "difficulty")
         place.setObject(newCollege.decisionDate as CKRecordValue?, forKey: "decisionDate")
         place.setObject(newCollege.testType as CKRecordValue?, forKey: "test")
-        place.setObject("0" as CKRecordValue?, forKey: "essaysRequired")
+        place.setObject(newCollege.essaysRequired as CKRecordValue?, forKey: "essaysRequired")
         place.setObject("0" as CKRecordValue?, forKey: "essaysDone")
-        place.setObject("0" as CKRecordValue?, forKey: "counselorRec")
+        place.setObject(newCollege.counselorRecNeeded as CKRecordValue?, forKey: "counselorRec")
         place.setObject("0" as CKRecordValue?, forKey: "counselorRecDone")
-        place.setObject("0" as CKRecordValue?, forKey: "teacherRec")
+        place.setObject(newCollege.teacherRecNeeded as CKRecordValue?, forKey: "teacherRec")
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
         database.save(place) { (record, error) in
