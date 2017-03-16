@@ -151,7 +151,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let counselorRecDone = college.object(forKey: "counselorRecDone") as! String
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
-                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent)
+                let collegeType = college.object(forKey: "collegeType") as! String
+                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType)
                 
                 self.collegeArray.append(currentCollege)
             }
