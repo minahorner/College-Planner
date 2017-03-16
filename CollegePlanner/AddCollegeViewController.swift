@@ -57,6 +57,7 @@ class AddCollegeViewController: UIViewController {
         addCollege.teacherRecNeeded = "0"
         addCollege.testSent = "0"
         addCollege.essaysDone = "0"
+        addCollege.recordID = "\(drand48())"
         
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
@@ -105,7 +106,7 @@ class AddCollegeViewController: UIViewController {
     }
     
     func updateCloud(newCollege : College){
-        let ID = CKRecordID(recordName: newCollege.collegeName)
+        let ID = CKRecordID(recordName: newCollege.recordID)
         let place = CKRecord(recordType: "College", recordID: ID)
         place.setObject(newCollege.collegeName as CKRecordValue?, forKey: "name")
         place.setObject(newCollege.collegeLocation as CKRecordValue?, forKey: "location")
@@ -131,5 +132,4 @@ class AddCollegeViewController: UIViewController {
             }
         }
     }
-    
 }

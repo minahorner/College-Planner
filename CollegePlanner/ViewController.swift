@@ -86,7 +86,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             vc.collegeArray = self.collegeArray
             vc.chosen = (collegeTableView.indexPathForSelectedRow?.row)!
             vc.previousVC = self
-            vc.collegeChecklist = [collegeArray[num].testSent, collegeArray[num].essaysDone, collegeArray[num].counselorRecDone, collegeArray[num].teacherRecDone]
         }
     }
     
@@ -137,6 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         database.perform(query, inZoneWith: nil) { (records, error) in
             
             for college in records!{
+                
                 let name = college.object(forKey: "name") as! String
                 let location = college.object(forKey: "location") as! String
                 let testType = college.object(forKey: "test") as! String
@@ -151,13 +151,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let counselorRecDone = college.object(forKey: "counselorRecDone") as! String
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
-                
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent)
                 
-                if self.collegeType == 0 || (self.collegeType == 3 && currentCollege.accepted == "1"){
                 self.collegeArray.append(currentCollege)
-                }
-                
+                print(self.collegeArray[0].recordID)
             }
             
             self.CKRecordCollege = records!
