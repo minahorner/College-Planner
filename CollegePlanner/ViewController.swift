@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
-    var collegeType = 0
+    var collegeTypePage = 0
     // var chosen = 0
     
     //nav bar:42, 121, 170
@@ -50,9 +50,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print(collegeTypePage)
+    }
     /*override func viewWillAppear(_ animated: Bool) {
         getColleges()
         collegeTableView.reloadData()
@@ -154,7 +156,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let collegeType = college.object(forKey: "collegeType") as! String
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType)
                 
+                
+                if (self.collegeTypePage == 0 || (self.collegeTypePage == 1 && currentCollege.collegeType == "1") || (self.collegeTypePage == 2 && currentCollege.collegeType == "2") || (self.collegeTypePage == 3 && currentCollege.collegeType == "3")){
                 self.collegeArray.append(currentCollege)
+                }
             }
             
             self.CKRecordCollege = records!

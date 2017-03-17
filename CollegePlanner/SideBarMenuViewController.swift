@@ -12,7 +12,8 @@ class SideBarMenuViewController: UITableViewController {
 
    // var categories = ["All Colleges", "Help"]
     var collegeType = 0
-
+    @IBOutlet var sideBarTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,14 +32,17 @@ class SideBarMenuViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = ViewController()
-        vc.collegeType = self.collegeType
+        let nav = segue.destination as! UINavigationController
+        let vc = nav.childViewControllers[0] as! ViewController
+        vc.collegeTypePage = (sideBarTableView.indexPathForSelectedRow?.row)!
+        //print(vc.collegeTypePage)
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        collegeType = indexPath.row
-    }
+       collegeType = indexPath.row
+    
+   }
 
     // MARK: - Table view data source
 /*

@@ -56,12 +56,12 @@ class AddCollegeViewController: UIViewController {
         addCollege.difficulty = difficulty.text!
         addCollege.testType = inputtedTest.text!
         addCollege.counselorRecDone =  "0"
-        addCollege.counselorRecNeeded = "0"
+        addCollege.counselorRecNeeded = numOfCounselorRecs.text!
         addCollege.teacherRecDone = "0"
-        addCollege.teacherRecNeeded = "0"
+        addCollege.teacherRecNeeded = numOfTeacherRecs.text!
         addCollege.testSent = "0"
         addCollege.essaysDone = "0"
-        addCollege.essaysRequired = "0"
+        addCollege.essaysRequired = numOfEssays.text!
         addCollege.teacherRecNeeded = "0"
         addCollege.recordID = "\(drand48())"
         
@@ -83,6 +83,7 @@ class AddCollegeViewController: UIViewController {
     }
     
     @IBAction func thinkingPressed(_ sender: UIButton) {
+        addCollege.collegeType = "1"
         thinkingAboutButton.backgroundColor = UIColor.cyan
         applyingToButton.backgroundColor = UIColor.clear
         acceptedButton.backgroundColor = UIColor.clear
@@ -90,12 +91,14 @@ class AddCollegeViewController: UIViewController {
         
     }
     @IBAction func applyingPressed(_ sender: UIButton) {
+        addCollege.collegeType = "2"
         thinkingAboutButton.backgroundColor = UIColor.clear
         applyingToButton.backgroundColor = UIColor.cyan
         acceptedButton.backgroundColor = UIColor.clear
         //alter college here
     }
     @IBAction func acceptedPressed(_ sender: UIButton) {
+        addCollege.collegeType = "3"
         thinkingAboutButton.backgroundColor = UIColor.clear
         applyingToButton.backgroundColor = UIColor.clear
         acceptedButton.backgroundColor = UIColor.cyan
@@ -128,6 +131,7 @@ class AddCollegeViewController: UIViewController {
         place.setObject(newCollege.teacherRecNeeded as CKRecordValue?, forKey: "teacherRec")
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
+        place.setObject(newCollege.collegeType as CKRecordValue, forKey: "collegeType")
         database.save(place) { (record, error) in
             if(error == nil){
                 print("saved")
