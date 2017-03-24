@@ -34,8 +34,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var thinkingAboutButton: UIButton!
     @IBOutlet weak var applyingToButton: UIButton!
     @IBOutlet weak var acceptedButton: UIButton!
-    
-    var originalName = ""
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     var collegeArray : [College] = [College]()
@@ -85,7 +83,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        originalName = collegeArray[chosen].collegeName
         
     }
 
@@ -139,7 +136,6 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
  */
     
     func refreshChecklist(){
-        print("\(collegeChecklist[0])" + "This is the refresh Checklist")
         collegeArray[chosen].testSent = collegeChecklist[0]
         collegeArray[chosen].essaysDone = collegeChecklist[1]
         collegeArray[chosen].counselorRecDone = collegeChecklist[2]
@@ -205,12 +201,14 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBAction func thinkingPressed(_ sender: UIButton) {
         collegeTypeLabel.text = "Thinking About"
+        collegeArray[chosen].collegeType = "1"
         thinkingAboutButton.backgroundColor = UIColor.cyan
         applyingToButton.backgroundColor = UIColor.clear
         acceptedButton.backgroundColor = UIColor.clear
     }
     @IBAction func applyingPressed(_ sender: UIButton) {
         collegeTypeLabel.text = "Applying To"
+        collegeArray[chosen].collegeType = "2"
         thinkingAboutButton.backgroundColor = UIColor.clear
         applyingToButton.backgroundColor = UIColor.cyan
         acceptedButton.backgroundColor = UIColor.clear
@@ -218,6 +216,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     }
     @IBAction func acceptedPressed(_ sender: UIButton) {
         collegeTypeLabel.text = "Accepted"
+        collegeArray[chosen].collegeType = "3"
         thinkingAboutButton.backgroundColor = UIColor.clear
         applyingToButton.backgroundColor = UIColor.clear
         acceptedButton.backgroundColor = UIColor.cyan
@@ -307,6 +306,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         place.setObject(collegeArray[chosen].teacherRecNeeded as CKRecordValue?, forKey: "teacherRec")
         place.setObject(collegeArray[chosen].teacherRecDone as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject(collegeArray[chosen].testSent as CKRecordValue?, forKey: "testSent")
+        place.setObject(collegeArray[chosen].collegeType as CKRecordValue?, forKey: "collegeType")
         modifyRecords.modifyRecordsCompletionBlock = { savedRecords, ID, error in
             if error == nil {
                 print("Modified")

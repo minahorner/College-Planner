@@ -15,32 +15,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var database = CKContainer.default().privateCloudDatabase
     
+    var ckRecordsArray : [CKRecord] = []
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var collegeArray = [College]()
-    var CKRecordCollege = [CKRecord]()
+    var arrayOfIDs = [CKRecordID]()
     
     var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
-    var collegeType = 0
-    // var chosen = 0
-    
-    //nav bar:42, 121, 170
-    //table view: 201
-    //cell: 245
+    var collegeTypePage = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getColleges()
-        letsTry()
         something = "yep"
-        //getColleges()
-        //collegeArrays.allColleges.append(College(collegeName: "Tufts", studentbodyGender: "Coed", collegeLocation: "Medford, MA", testType: "ACT w/out Writing, SAT w/out Writing", decisionDate: "1/01/17", essaysRequired: "4", testPolicy: "Always Required", login: "N/A", password: "N/A", difficulty: "Reach"))
-        
-        //collegeArrays.allColleges[0].testSent = true
-        
-        //collegeArrays.applyingColleges.append(collegeArrays.allColleges[0])
+        var postion : [Int64] = [4,3,1,9]
+        print(postion.sorted()) //easy way to sort
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         if self.revealViewController() != nil {
@@ -50,27 +43,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
+
     }
-    
-    /*override func viewWillAppear(_ animated: Bool) {
-        getColleges()
-        collegeTableView.reloadData()
-        print("will")
-    }
- */
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func letsTry(){
-        
-        //controller?.thing = "it's lit"
-    }
-    
+
     //sends to viewcontrollers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segueToAddCollege"){
@@ -111,19 +92,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedCollege = collegeArray[sourceIndexPath.row]
-        let movedCKRecord = CKRecordCollege[sourceIndexPath.row]
         collegeArray.remove(at: sourceIndexPath.row)
         collegeArray.insert(movedCollege, at: destinationIndexPath.row)
-        CKRecordCollege.remove(at: sourceIndexPath.row)
-        CKRecordCollege.insert(movedCKRecord, at: destinationIndexPath.row)
         //add save function to save order of college
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             print("doing")
-            collegeArray.remove(at: indexPath.row)
-            CKRecordCollege.remove(at: indexPath.row)
+            let record = CKRecordID(recordName: collegeArray[indexPath.row].recordID)
+            database.delete(withRecordID: record) { (ID, error) in
+                if error == nil{
+                    print("Deleted")
+                }
+                else{
+                    print(error)
+                }
+            }
+            self.collegeArray.remove(at: indexPath.row)
             collegeTableView.reloadData()
         }
     }
@@ -132,7 +118,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "College", predicate: predicate)
-        
+
         database.perform(query, inZoneWith: nil) { (records, error) in
             
             for college in records!{
@@ -151,22 +137,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let counselorRecDone = college.object(forKey: "counselorRecDone") as! String
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
-                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent)
+                let collegeType = college.object(forKey: "collegeType") as! String
+//                let allCollegeOrder = college.object(forKey: "allCollegeOrder") as! Int64
+//                let thinkingAboutCollegeOrder = college.object(forKey: "thinkingAboutCollegesOrder") as! Int64
+//                let appliedToCollegeOrder = college.object(forKey: "applyingToCollegesOrder") as! Int64
+//                let acceptedCollegeOrder = college.object(forKey: "acceptedCollegesOrder") as! Int64
                 
+                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType, allCollegeOrder : 0, thinkingAboutCollegeOrder : 0, appliedToCollegeOrder : 0, acceptedCollegeOrder : 0)
+                
+                if(self.collegeTypePage == 0)
+                {
+//                    postion.append(allCollegeOrder)
+                }
+                else if(self.collegeTypePage == 1 && currentCollege.collegeType == "1"){
+//                    postion.append(thinkingAboutCollegeOrder)
+                }
+                else if(self.collegeTypePage == 2 && currentCollege.collegeType == "2"){
+//                    postion.append(appliedToCollegeOrder)
+                }
+                else if(self.collegeTypePage == 3 && currentCollege.collegeType == "3"){
+//                    postion.append(acceptedCollegeOrder)
+                }
+                
+                if (self.collegeTypePage == 0 || (self.collegeTypePage == 1 && currentCollege.collegeType == "1") || (self.collegeTypePage == 2 && currentCollege.collegeType == "2") || (self.collegeTypePage == 3 && currentCollege.collegeType == "3")){
+                    
                 self.collegeArray.append(currentCollege)
-                print(self.collegeArray[0].recordID)
+                }
+                
+ 
+                
             }
-            
-            self.CKRecordCollege = records!
-            
             DispatchQueue.main.async {
                 self.collegeTableView.reloadData()
             }
+            
         }
     }
-    func updateOrder(){
-        let modify = CKModifyRecordsOperation(recordsToSave: CKRecordCollege, recordIDsToDelete: nil)
-        modify.recordsToSave = CKRecordCollege
+    
+    func updateCloud(){
+       
     }
-}
-
+    
+   }

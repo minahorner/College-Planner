@@ -12,7 +12,8 @@ class SideBarMenuViewController: UITableViewController {
 
    // var categories = ["All Colleges", "Help"]
     var collegeType = 0
-
+    @IBOutlet var sideBarTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,11 +37,7 @@ class SideBarMenuViewController: UITableViewController {
         vc.collegeType = self.collegeType
         
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        collegeType = indexPath.row
-    }
-
+ 
     // MARK: - Table view data source
 /*
     override func numberOfSections(in tableView: UITableView) -> Int {
