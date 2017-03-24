@@ -33,6 +33,10 @@ class AddCollegeViewController: UIViewController {
     @IBOutlet weak var applyingToButton: UIButton!
     @IBOutlet weak var acceptedButton: UIButton!
     @IBOutlet weak var thinkingAboutButton: UIButton!
+    var temp1 = 0
+    var temp2 = 0
+    var temp3 = 0
+    var finalPress = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +76,9 @@ class AddCollegeViewController: UIViewController {
         //addCollege.essaysDone = false
         //addCollege.essaysRequired = ""
         //addCollege.accepted = false
-       // previousVC.collegeArray.append(addCollege)
+        previousVC.collegeArray.append(addCollege)
         updateCloud(newCollege: addCollege)
+        previousVC.collegeTableView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -132,12 +137,15 @@ class AddCollegeViewController: UIViewController {
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
         place.setObject(newCollege.collegeType as CKRecordValue, forKey: "collegeType")
+//        place.setObject(newCollege.allCollegeOrder as CKRecordValue?, forKey: "allCollegeOrder")
+//        place.setObject(newCollege.thinkingAboutCollegeOrder as CKRecordValue?, forKey: "thinkingAboutCollegesOrder")
+//        place.setObject(newCollege.appliedToCollegeOrder as CKRecordValue?, forKey: "applyingToCollegesOrder")
+//        place.setObject(newCollege.acceptedCollegeOrder as CKRecordValue?, forKey: "acceptedCollegesOrder")
         database.save(place) { (record, error) in
             if(error == nil){
                 print("saved")
             }
             else{
-                print("error")
                 print(error)
             }
         }

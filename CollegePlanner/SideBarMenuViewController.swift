@@ -35,15 +35,9 @@ class SideBarMenuViewController: UITableViewController {
         let nav = segue.destination as! UINavigationController
         let vc = nav.childViewControllers[0] as! ViewController
         vc.collegeTypePage = (sideBarTableView.indexPathForSelectedRow?.row)!
-        //print(vc.collegeTypePage)
         
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       collegeType = indexPath.row
-    
-   }
-
+ 
     // MARK: - Table view data source
 /*
     override func numberOfSections(in tableView: UITableView) -> Int {
