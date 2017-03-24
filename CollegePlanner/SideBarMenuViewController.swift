@@ -31,7 +31,8 @@ class SideBarMenuViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = ViewController()
+        var nav = segue.destination as! UINavigationController
+        var vc = nav.childViewControllers[0] as! ViewController
         vc.collegeType = self.collegeType
         
     }
