@@ -137,6 +137,7 @@ class AddCollegeViewController: UIViewController {
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
         place.setObject(newCollege.collegeType as CKRecordValue, forKey: "collegeType")
+        place.setObject(newCollege.recordID as CKRecordValue, forKey: "RecordID")
 //        place.setObject(newCollege.allCollegeOrder as CKRecordValue?, forKey: "allCollegeOrder")
 //        place.setObject(newCollege.thinkingAboutCollegeOrder as CKRecordValue?, forKey: "thinkingAboutCollegesOrder")
 //        place.setObject(newCollege.appliedToCollegeOrder as CKRecordValue?, forKey: "applyingToCollegesOrder")

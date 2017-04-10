@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Colleges-->
+        <!--Colleges-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CollegePlanner" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="All Colleges" id="hui-pB-Gem">
+                    <navigationItem key="navigationItem" title="Colleges" id="hui-pB-Gem">
                         <barButtonItem key="leftBarButtonItem" image="whiteHamburger" id="sJg-Pk-xbO">
                             <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
@@ -74,6 +74,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="add" destination="cwX-9O-IOZ" id="0dD-67-h1a"/>
                         <outlet property="collegeTableView" destination="HoK-oj-ixB" id="M4G-jG-kp1"/>
                         <outlet property="editButton" destination="RGi-pL-aPZ" id="6yp-Ni-CvM"/>
                         <outlet property="menuButton" destination="sJg-Pk-xbO" id="O3Q-ev-WBg"/>

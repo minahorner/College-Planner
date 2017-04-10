@@ -24,18 +24,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var collegeArray = [College]()
     var arrayOfIDs = [CKRecordID]()
     
-    var collegeArrays: arrayTransfer = arrayTransfer(allColleges: [], appliedColleges: [], acceptedColleges: [], applyingColleges: [], consideringColleges: [])
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
     var collegeTypePage = 0
 
+    @IBOutlet weak var add: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getColleges()
         something = "yep"
         var postion : [Int64] = [4,3,1,9]
-        print(postion.sorted()) //easy way to sort
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         if self.revealViewController() != nil {
@@ -45,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
-
+        
     }
     
     
@@ -75,6 +74,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         self.collegeTableView.setEditing(editing, animated: animated)
+        if(editing){
+            add.isEnabled = false
+        }
+        else{
+            add.isEnabled = true
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -88,16 +93,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedCollege = collegeArray[sourceIndexPath.row]
-        collegeArray.remove(at: sourceIndexPath.row)
-        collegeArray.insert(movedCollege, at: destinationIndexPath.row)
+    //func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    //    let movedCollege = collegeArray[sourceIndexPath.row]
+    //    collegeArray.remove(at: sourceIndexPath.row)
+    //    collegeArray.insert(movedCollege, at: destinationIndexPath.row)
         //add save function to save order of college
-    }
+    //}
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
@@ -118,6 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func getColleges(){
         
+        collegeArray = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "College", predicate: predicate)
 
@@ -126,6 +129,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             for college in records!{
                 
                 let name = college.object(forKey: "name") as! String
+                print(name)
                 let location = college.object(forKey: "location") as! String
                 let testType = college.object(forKey: "test") as! String
                 let decisionDate = college.object(forKey: "decisionDate") as! String
@@ -140,30 +144,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
                 let collegeType = college.object(forKey: "collegeType") as! String
+                let recordID = college.object(forKey: "RecordID") as! String
 //                let allCollegeOrder = college.object(forKey: "allCollegeOrder") as! Int64
 //                let thinkingAboutCollegeOrder = college.object(forKey: "thinkingAboutCollegesOrder") as! Int64
 //                let appliedToCollegeOrder = college.object(forKey: "applyingToCollegesOrder") as! Int64
 //                let acceptedCollegeOrder = college.object(forKey: "acceptedCollegesOrder") as! Int64
                 
-                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType, allCollegeOrder : 0, thinkingAboutCollegeOrder : 0, appliedToCollegeOrder : 0, acceptedCollegeOrder : 0)
-                
-                if(self.collegeTypePage == 0)
-                {
-//                    postion.append(allCollegeOrder)
-                }
-                else if(self.collegeTypePage == 1 && currentCollege.collegeType == "1"){
-//                    postion.append(thinkingAboutCollegeOrder)
-                }
-                else if(self.collegeTypePage == 2 && currentCollege.collegeType == "2"){
-//                    postion.append(appliedToCollegeOrder)
-                }
-                else if(self.collegeTypePage == 3 && currentCollege.collegeType == "3"){
-//                    postion.append(acceptedCollegeOrder)
-                }
+                let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType, allCollegeOrder : 0, thinkingAboutCollegeOrder : 0, appliedToCollegeOrder : 0, acceptedCollegeOrder : 0, RecordID : recordID)
                 
                 if (self.collegeTypePage == 0 || (self.collegeTypePage == 1 && currentCollege.collegeType == "1") || (self.collegeTypePage == 2 && currentCollege.collegeType == "2") || (self.collegeTypePage == 3 && currentCollege.collegeType == "3")){
                     
-                self.collegeArray.append(currentCollege)
+                    self.collegeArray.append(currentCollege)
                 }
                 
  
@@ -175,9 +166,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
-    
-    func updateCloud(){
-       
-    }
-    
    }
