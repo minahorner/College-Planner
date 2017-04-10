@@ -11,6 +11,8 @@ import CloudKit
 
 var something = "asdf"
 
+//41, 121, 170
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var database = CKContainer.default().privateCloudDatabase

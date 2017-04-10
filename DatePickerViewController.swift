@@ -55,7 +55,7 @@ class DatePickerViewController: UIViewController {
         
         let delegate = UIApplication.shared.delegate as? AppDelegate
         
-        //delegate?.scheduleNotification(at: date, school: (previousVC?.applyingCollegeArray[(previousVC?.chosen)!].collegeName)!)
+        delegate?.scheduleNotification(at: date, school: (previousVC?.collegeArray[(previousVC?.chosen)!].collegeName)!)
         self.dismiss(animated: true) { 
             
         }

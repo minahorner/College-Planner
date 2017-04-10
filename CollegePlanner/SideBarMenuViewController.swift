@@ -32,9 +32,12 @@ class SideBarMenuViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var nav = segue.destination as! UINavigationController
-        var vc = nav.childViewControllers[0] as! ViewController
-        vc.collegeType = self.collegeType
+        if(segue.identifier == "toHelp"){
+        }else{
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.childViewControllers[0] as! ViewController
+            vc.collegeTypePage = (sideBarTableView.indexPathForSelectedRow?.row)!
+        }
         
     }
  
