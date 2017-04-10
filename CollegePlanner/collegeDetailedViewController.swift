@@ -70,6 +70,18 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
         difficulty.text = collegeArray[chosen].difficulty
         deadline.text = collegeArray[chosen].decisionDate
         
+        if(collegeArray[chosen].collegeType == "1"){
+        collegeTypeLabel.text = "Thinking About"
+        }
+        else if(collegeArray[chosen].collegeType == "2"){
+            collegeTypeLabel.text = "Applying To"
+        }
+        else if(collegeArray[chosen].collegeType == "3"){
+            collegeTypeLabel.text = "Accepted"
+        }
+        else{
+            collegeTypeLabel.text = "No Status"
+        }
         schoolName_TextField.text = collegeArray[chosen].collegeName
         location_TextField.text = collegeArray[chosen].collegeLocation
         login_TextField.text = collegeArray[chosen].login
