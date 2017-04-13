@@ -65,4 +65,11 @@ class College{
     
     //var checklist: [Bool] = [testSent]
     
+    func getNotifyDate() -> Date{
+        let calendar = Calendar.current
+        var date = Date()
+        date = calendar.date(byAdding: .day, value: -14, to: date)!
+        return date
+    }
+    
 }
