@@ -11,7 +11,7 @@ import UIKit
 class College{
     
     init() {
-        // self.checklist = [false, false, false, false, false]
+
     }
     
     init (collegeName: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, login: String, password: String, difficulty : String, counselorRecNeeded : String, counselorRecDone : String,
@@ -36,7 +36,7 @@ class College{
         self.thinkingAboutCollegeOrder = thinkingAboutCollegeOrder
         self.appliedToCollegeOrder = appliedToCollegeOrder
         self.acceptedCollegeOrder = acceptedCollegeOrder
-        //checklist = [testSent, essaysDone, counselorRecDone, teacherRecDone, accepted]
+
         
     }
     
@@ -63,7 +63,6 @@ class College{
     var appliedToCollegeOrder : Int64 = 0
     var acceptedCollegeOrder : Int64 = 0
     
-    //var checklist: [Bool] = [testSent]
     
     func getNotifyDate() -> Date{
         var dateFormatter = DateFormatter()
