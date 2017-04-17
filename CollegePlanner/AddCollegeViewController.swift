@@ -12,7 +12,7 @@ import CloudKit
 class AddCollegeViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
-    var previousVC = UIViewController()
+    var previousVC = ViewController()
     var addCollege: College = College()
     var previousTableView = UITableView()
     var database = CKContainer.default().privateCloudDatabase
@@ -67,6 +67,7 @@ class AddCollegeViewController: UIViewController {
         addCollege.essaysDone = "0"
         addCollege.essaysRequired = numOfEssays.text!
         addCollege.teacherRecNeeded = "0"
+        addCollege.recordID = "\(drand48())"
         
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
@@ -136,6 +137,7 @@ class AddCollegeViewController: UIViewController {
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
         place.setObject(newCollege.collegeType as CKRecordValue, forKey: "collegeType")
+        place.setObject(newCollege.recordID as CKRecordValue, forKey: "RecordID")
 //        place.setObject(newCollege.allCollegeOrder as CKRecordValue?, forKey: "allCollegeOrder")
 //        place.setObject(newCollege.thinkingAboutCollegeOrder as CKRecordValue?, forKey: "thinkingAboutCollegesOrder")
 //        place.setObject(newCollege.appliedToCollegeOrder as CKRecordValue?, forKey: "applyingToCollegesOrder")

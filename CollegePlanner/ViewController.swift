@@ -142,16 +142,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let essaysDone = college.object(forKey: "essaysDone") as! String
                     let testSent = college.object(forKey: "testSent") as! String
                     let collegeType = college.object(forKey: "collegeType") as! String
-                    let collegeRecord = college.object(forKey: "collegeID") as! String
+                    let collegeRecord = college.object(forKey: "RecordID") as! String
                     //                let allCollegeOrder = college.object(forKey: "allCollegeOrder") as! Int64
                     //                let thinkingAboutCollegeOrder = college.object(forKey: "thinkingAboutCollegesOrder") as! Int64
                     //                let appliedToCollegeOrder = college.object(forKey: "applyingToCollegesOrder") as! Int64
                     //                let acceptedCollegeOrder = college.object(forKey: "acceptedCollegesOrder") as! Int64
                     let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType, allCollegeOrder : 0, thinkingAboutCollegeOrder : 0, appliedToCollegeOrder : 0, acceptedCollegeOrder : 0, RecordID : collegeRecord)
-    
-    
-    
-    
     
                     if (self.collegeTypePage == 0 || (self.collegeTypePage == 1 && currentCollege.collegeType == "1") || (self.collegeTypePage == 2 && currentCollege.collegeType == "2") || (self.collegeTypePage == 3 && currentCollege.collegeType == "3")){
                         
