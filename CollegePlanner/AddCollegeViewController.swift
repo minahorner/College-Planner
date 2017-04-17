@@ -70,7 +70,6 @@ class AddCollegeViewController: UIViewController {
         addCollege.essaysDone = "0"
         //addCollege.essaysRequired = numOfEssays.text!
         addCollege.teacherRecNeeded = "0"
-        addCollege.recordID = "\(drand48())"
         
         //stringDate = date.description
         
@@ -141,8 +140,7 @@ class AddCollegeViewController: UIViewController {
     }
     
     func updateCloud(newCollege : College){
-        let ID = CKRecordID(recordName: newCollege.recordID)
-        let place = CKRecord(recordType: "College", recordID: ID)
+        let place = CKRecord(recordType: "College")
         place.setObject(newCollege.collegeName as CKRecordValue?, forKey: "name")
         place.setObject(newCollege.collegeLocation as CKRecordValue?, forKey: "location")
         place.setObject(newCollege.login as CKRecordValue?, forKey: "login")
@@ -158,7 +156,7 @@ class AddCollegeViewController: UIViewController {
         place.setObject("0" as CKRecordValue?, forKey: "teacherRecDone")
         place.setObject("0" as CKRecordValue?, forKey: "testSent")
         place.setObject(newCollege.collegeType as CKRecordValue, forKey: "collegeType")
-        place.setObject(newCollege.recordID as CKRecordValue, forKey: "RecordID")
+        //place.setObject((place.recordID as! String) as CKRecordValue, forKey: "RecordID")
 //        place.setObject(newCollege.allCollegeOrder as CKRecordValue?, forKey: "allCollegeOrder")
 //        place.setObject(newCollege.thinkingAboutCollegeOrder as CKRecordValue?, forKey: "thinkingAboutCollegesOrder")
 //        place.setObject(newCollege.appliedToCollegeOrder as CKRecordValue?, forKey: "applyingToCollegesOrder")
