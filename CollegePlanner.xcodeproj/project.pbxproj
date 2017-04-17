@@ -13,6 +13,7 @@
 		D73950EB1DDF55FA00684117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950E91DDF55FA00684117 /* Main.storyboard */; };
 		D73950ED1DDF55FA00684117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73950EC1DDF55FA00684117 /* Assets.xcassets */; };
 		D73950F01DDF55FA00684117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73950EE1DDF55FA00684117 /* LaunchScreen.storyboard */; };
+		D75387A11EA50B6700506E02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73950E71DDF55FA00684117 /* ViewController.swift */; };
 		D7589D521E44E20000D33D03 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7589D511E44E20000D33D03 /* Protocol.swift */; };
 		D76915661DDF57FD001B121D /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76915651DDF57FD001B121D /* College.swift */; };
 		D78555961E576BCD00099EFF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78555951E576BCD00099EFF /* HelpViewController.swift */; };
@@ -202,6 +203,7 @@
 				D7BAB49C1DE4A7BB005BEFB1 /* arrayTransfer.swift in Sources */,
 				D78555961E576BCD00099EFF /* HelpViewController.swift in Sources */,
 				D7E81A4E1DF1CF88009A5524 /* SideBarMenuViewController.swift in Sources */,
+				D75387A11EA50B6700506E02 /* ViewController.swift in Sources */,
 				D7A11DE11E43959F00014796 /* DatePickerViewController.swift in Sources */,
 				D7E81A4C1DF1CED2009A5524 /* SWRevealViewController.m in Sources */,
 				D73950E61DDF55FA00684117 /* AppDelegate.swift in Sources */,
