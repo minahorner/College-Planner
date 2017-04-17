@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class College{
     
@@ -15,7 +16,7 @@ class College{
     }
     
     init (collegeName: String, collegeLocation: String, testType: String, decisionDate: String, essaysRequired: String, login: String, password: String, difficulty : String, counselorRecNeeded : String, counselorRecDone : String,
-          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String, collegeType : String, allCollegeOrder : Int64, thinkingAboutCollegeOrder : Int64, appliedToCollegeOrder : Int64, acceptedCollegeOrder : Int64, RecordID : String) {
+          teacherRecNeeded : String, teacherRecDone : String, essaysDone : String, testSent : String, collegeType : String, allCollegeOrder : Int64, thinkingAboutCollegeOrder : Int64, appliedToCollegeOrder : Int64, acceptedCollegeOrder : Int64, recordID : CKRecordID) {
         self.collegeName = collegeName
         self.collegeLocation = collegeLocation
         self.testType = testType
@@ -31,7 +32,7 @@ class College{
         self.essaysDone = essaysDone
         self.testSent = testSent
         self.collegeType = collegeType
-        self.recordID = "\(RecordID)"
+        self.recordID = recordID
         self.allCollegeOrder = allCollegeOrder
         self.thinkingAboutCollegeOrder = thinkingAboutCollegeOrder
         self.appliedToCollegeOrder = appliedToCollegeOrder
@@ -51,7 +52,7 @@ class College{
     var login : String = ""
     var password : String = ""
     var difficulty : String = ""
-    var recordID : String = ""
+    var recordID : CKRecordID = CKRecordID(recordName: "whatever")
     var teacherRecDone: String = ""
     var counselorRecDone: String =  ""
     var essaysDone: String = ""

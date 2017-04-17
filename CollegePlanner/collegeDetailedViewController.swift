@@ -299,8 +299,7 @@ class collegeDetailedViewController: UIViewController, UITableViewDelegate, UITa
     
     func updateCloud(){
         
-        let ID = CKRecordID(recordName: collegeArray[chosen].recordID)
-        let place = CKRecord(recordType: "College", recordID: ID)
+        let place = CKRecord(recordType: "College", recordID: collegeArray[chosen].recordID)
         let modifyRecords = CKModifyRecordsOperation(recordsToSave: [place], recordIDsToDelete: nil)
         modifyRecords.savePolicy = CKRecordSavePolicy.allKeys
         modifyRecords.qualityOfService = QualityOfService.userInitiated
