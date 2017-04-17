@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var collegeTableView: UITableView!
     @IBOutlet weak var editButton: UINavigationItem!
     var collegeTypePage = 0
-
+    
     @IBOutlet weak var add: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //sends to viewcontrollers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segueToAddCollege"){
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //    let movedCollege = collegeArray[sourceIndexPath.row]
     //    collegeArray.remove(at: sourceIndexPath.row)
     //    collegeArray.insert(movedCollege, at: destinationIndexPath.row)
-        //add save function to save order of college
+    //add save function to save order of college
     //}
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         collegeArray = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "College", predicate: predicate)
-
+        
         database.perform(query, inZoneWith: nil) { (records, error) in
             
             for college in records!{
@@ -141,18 +141,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let essaysDone = college.object(forKey: "essaysDone") as! String
                 let testSent = college.object(forKey: "testSent") as! String
                 let collegeType = college.object(forKey: "collegeType") as! String
-//                let allCollegeOrder = college.object(forKey: "allCollegeOrder") as! Int64
-//                let thinkingAboutCollegeOrder = college.object(forKey: "thinkingAboutCollegesOrder") as! Int64
-//                let appliedToCollegeOrder = college.object(forKey: "applyingToCollegesOrder") as! Int64
-//                let acceptedCollegeOrder = college.object(forKey: "acceptedCollegesOrder") as! Int64
+                //                let allCollegeOrder = college.object(forKey: "allCollegeOrder") as! Int64
+                //                let thinkingAboutCollegeOrder = college.object(forKey: "thinkingAboutCollegesOrder") as! Int64
+                //                let appliedToCollegeOrder = college.object(forKey: "applyingToCollegesOrder") as! Int64
+                //                let acceptedCollegeOrder = college.object(forKey: "acceptedCollegesOrder") as! Int64
                 let currentCollege = College(collegeName: name, collegeLocation: location, testType: testType, decisionDate: decisionDate, essaysRequired: essaysRequired, login: login, password: password, difficulty: difficulty, counselorRecNeeded: counselorRecNeeded, counselorRecDone: counselorRecDone, teacherRecNeeded: teacherRecNeeded, teacherRecDone: teacherRecDone, essaysDone: essaysDone, testSent: testSent, collegeType : collegeType, allCollegeOrder : 0, thinkingAboutCollegeOrder : 0, appliedToCollegeOrder : 0, acceptedCollegeOrder : 0, RecordID : college.recordID)
+                
+                
                 
                 if (self.collegeTypePage == 0 || (self.collegeTypePage == 1 && currentCollege.collegeType == "1") || (self.collegeTypePage == 2 && currentCollege.collegeType == "2") || (self.collegeTypePage == 3 && currentCollege.collegeType == "3")){
                     
                     self.collegeArray.append(currentCollege)
                 }
                 
- 
+                
                 
             }
             DispatchQueue.main.async {
@@ -161,4 +163,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
     }
-   }
+}
