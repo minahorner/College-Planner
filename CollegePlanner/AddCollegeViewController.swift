@@ -16,7 +16,7 @@ class AddCollegeViewController: UIViewController {
     var addCollege: College = College()
     var previousTableView = UITableView()
     var database = CKContainer.default().privateCloudDatabase
-    var date = Date()
+    var thisdate = Date()
     
     @IBOutlet weak var inputtedName: UITextField!
     @IBOutlet weak var inputtedLocation: UITextField!
@@ -44,7 +44,7 @@ class AddCollegeViewController: UIViewController {
     }
     
     @IBAction func datePickerPressed(_ sender: UIDatePicker) {
-        date = sender.date
+        thisdate = sender.date
     }
     
     
@@ -53,8 +53,8 @@ class AddCollegeViewController: UIViewController {
         sender: UIButton) {
         //need to add the option to put in inputted information for number of essays and number of teacher recs needed
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
-        addCollege.decisionDate = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mma"
+        addCollege.decisionDate = dateFormatter.string(from: thisdate)
         addCollege.collegeName = inputtedName.text!
         addCollege.collegeLocation = inputtedLocation.text!
         addCollege.testType = inputtedTest.text!
@@ -89,12 +89,18 @@ class AddCollegeViewController: UIViewController {
         previousVC.collegeTableView.reloadData()
         self.dismiss(animated: true, completion: nil)
         
+        let calendar = Calendar.current
+        
+        thisdate = calendar.date(byAdding: .day, value: -14, to: thisdate)!
+        
+        
         let delegate = UIApplication.shared.delegate as? AppDelegate
         
-        delegate?.scheduleNotification(at: (addCollege.getNotifyDate()), school: (addCollege.collegeName))
         
-        print("this is the thing")
-        print(addCollege.getNotifyDate())
+        
+        delegate?.scheduleNotification(at: thisdate, school: (addCollege.collegeName))
+        
+               
     }
     
     override func didReceiveMemoryWarning() {

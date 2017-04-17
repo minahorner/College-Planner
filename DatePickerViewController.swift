@@ -46,7 +46,7 @@ class DatePickerViewController: UIViewController {
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mma"
         stringDate = dateFormatter.string(from: date)
         //stringDate = date.description
         
@@ -55,11 +55,12 @@ class DatePickerViewController: UIViewController {
        previousVC?.collegeArray[(previousVC?.chosen)!].decisionDate = stringDate
        
         print("this")
-        print(previousVC?.collegeArray[(previousVC?.chosen)!].getNotifyDate())
-        
+                
+        let calendar = Calendar.current
+        date = calendar.date(byAdding: .day, value: -14, to: date)!
         let delegate = UIApplication.shared.delegate as? AppDelegate
         
-        delegate?.scheduleNotification(at: (previousVC?.collegeArray[(previousVC?.chosen)!].getNotifyDate())!, school: (previousVC?.collegeArray[(previousVC?.chosen)!].collegeName)!)
+        delegate?.scheduleNotification(at: date, school: (previousVC?.collegeArray[(previousVC?.chosen)!].collegeName)!)
         self.dismiss(animated: true) { 
         }
         
