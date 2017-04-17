@@ -23,6 +23,10 @@ class DatePickerViewController: UIViewController {
     @IBAction func datePickerPressed(_ sender: UIDatePicker) {
         
         date = sender.date
+        print("this")
+        print(sender.date)
+        print("current")
+        print(Date())
    
         
     }
@@ -42,7 +46,7 @@ class DatePickerViewController: UIViewController {
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        dateFormatter.dateFormat = "MM/dd/YYYY HH:mma"
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
         stringDate = dateFormatter.string(from: date)
         //stringDate = date.description
         
@@ -50,6 +54,8 @@ class DatePickerViewController: UIViewController {
         previousVC?.deadline.text = stringDate
        previousVC?.collegeArray[(previousVC?.chosen)!].decisionDate = stringDate
        
+        print("this")
+        print(previousVC?.collegeArray[(previousVC?.chosen)!].getNotifyDate())
         
         let delegate = UIApplication.shared.delegate as? AppDelegate
         

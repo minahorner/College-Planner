@@ -66,9 +66,14 @@ class College{
     //var checklist: [Bool] = [testSent]
     
     func getNotifyDate() -> Date{
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
+        print("this thing")
+        print(decisionDate)
+        var oldDate: Date = dateFormatter.date(from: decisionDate)!
         let calendar = Calendar.current
         var date = Date()
-        date = calendar.date(byAdding: .day, value: -14, to: date)!
+        date = calendar.date(byAdding: .day, value: -14, to: oldDate)!
         return date
     }
     

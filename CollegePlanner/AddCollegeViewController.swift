@@ -16,15 +16,13 @@ class AddCollegeViewController: UIViewController {
     var addCollege: College = College()
     var previousTableView = UITableView()
     var database = CKContainer.default().privateCloudDatabase
+    var date = Date()
     
     @IBOutlet weak var inputtedName: UITextField!
     @IBOutlet weak var inputtedLocation: UITextField!
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var difficulty: UITextField!
-    @IBOutlet weak var numOfEssays: UITextField!
-    @IBOutlet weak var numOfTeacherRecs: UITextField!
-    @IBOutlet weak var numOfCounselorRecs: UITextField!
     
     @IBOutlet weak var deadlineDatePicker: UIDatePicker!
     
@@ -45,13 +43,18 @@ class AddCollegeViewController: UIViewController {
         
     }
     
+    @IBAction func datePickerPressed(_ sender: UIDatePicker) {
+        date = sender.date
+    }
+    
+    
     
     @IBAction func addButtonPressed(_
         sender: UIButton) {
         //need to add the option to put in inputted information for number of essays and number of teacher recs needed
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY HH:mm"
-        addCollege.decisionDate = dateFormatter.string(from: deadlineDatePicker.date)
+        addCollege.decisionDate = dateFormatter.string(from: date)
         addCollege.collegeName = inputtedName.text!
         addCollege.collegeLocation = inputtedLocation.text!
         addCollege.testType = inputtedTest.text!
@@ -60,14 +63,19 @@ class AddCollegeViewController: UIViewController {
         addCollege.difficulty = difficulty.text!
         addCollege.testType = inputtedTest.text!
         addCollege.counselorRecDone =  "0"
-        addCollege.counselorRecNeeded = numOfCounselorRecs.text!
+        //addCollege.counselorRecNeeded = numOfCounselorRecs.text!
         addCollege.teacherRecDone = "0"
-        addCollege.teacherRecNeeded = numOfTeacherRecs.text!
+        //addCollege.teacherRecNeeded = numOfTeacherRecs.text!
         addCollege.testSent = "0"
         addCollege.essaysDone = "0"
-        addCollege.essaysRequired = numOfEssays.text!
+        //addCollege.essaysRequired = numOfEssays.text!
         addCollege.teacherRecNeeded = "0"
         addCollege.recordID = "\(drand48())"
+        
+        //stringDate = date.description
+        
+        
+        
         
         //addCollege.teacherRecNeeded = false
         //addCollege.teacherRecDone = false
@@ -80,6 +88,13 @@ class AddCollegeViewController: UIViewController {
         updateCloud(newCollege: addCollege)
         previousVC.collegeTableView.reloadData()
         self.dismiss(animated: true, completion: nil)
+        
+        let delegate = UIApplication.shared.delegate as? AppDelegate
+        
+        delegate?.scheduleNotification(at: (addCollege.getNotifyDate()), school: (addCollege.collegeName))
+        
+        print("this is the thing")
+        print(addCollege.getNotifyDate())
     }
     
     override func didReceiveMemoryWarning() {
